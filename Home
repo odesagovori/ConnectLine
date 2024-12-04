@@ -171,7 +171,7 @@
         }
 
         .footer {
-            background-color: #333;
+            background-color: rgba(90,112,205,1);
             color: white;
             text-align: center;
             padding: 20px;
@@ -181,7 +181,7 @@
         }
 
         .footer a {
-            color: rgba(90,112,205,1);
+            color: gray;
             text-decoration: none;
             margin: 0 10px;
         }
