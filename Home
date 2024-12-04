@@ -1,1 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
 
+<body>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .bg {
+            animation:slide 3s ease-in-out infinite alternate;
+            background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
+            bottom:0;
+            left:-50%;
+            opacity:.5;
+            position:fixed;
+            right:-50%;
+            top:0;
+            z-index:-1;
+        }
+
+        .bg2 {
+            animation-direction:alternate-reverse;
+            animation-duration:4s;
+        }
+
+        .bg3 {
+            animation-duration:5s;
+        }
+
+        @keyframes slide {
+            0% {
+                transform:translateX(-25%);
+            }
+            100% {
+                transform:translateX(25%);
+            }
+        }
+
+        .navbar {
+            background-color: linear-gradient(90deg, rgba(90,112,205,1) 0%, rgba(148,185,255,1) 55%);
+            padding: 15px;
+            text-align: right;
+            font-family: 'Futura';
+        }
+
+        .navbar a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .box-container {
+            display: flex;
+	        flex-direction: row;
+	        flex-wrap: wrap;
+	        justify-content: space-evenly;
+	        align-items: stretch;
+	        align-content: center;
+            padding: 50px;
+            height: 70vh;
+        }
+
+        .boxes-box {
+            border-radius: 30px;
+            background: white;
+            padding: 80px 1px;
+
+            box-shadow: 0 0 100px rgba(0, 0, 0, 0.1);
+            width: 280px;
+            height: 50px;
+            border: 2px solid;
+            text-align: center;
+        }
+
+        .box-container2 {
+            display: flex;
+	        flex-direction: row;
+	        flex-wrap: wrap;
+	        justify-content: space-evenly;
+	        align-items: stretch;
+	        align-content: center;
+            padding: 50px;
+            height: 1vh;
+        }
+
+        .boxes-box2 {
+            border-radius: 30px;
+            background: white;
+            padding: 80px 1px;
+
+            box-shadow: 0 0 100px rgba(0, 0, 0, 0.1);
+            width: 280px;
+            height: 50px;
+            border: 2px solid;
+            text-align: center;
+        }
+
+        .search-container {
+            display: flex;
+            justify-content: center; 
+            margin-top: 20px;
+            align-items: center; 
+        }
+
+        .search-bar{
+            width: 300px;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 25px; 
+            border: 1px solid white;
+            outline: none; 
+            align-items: center;
+            display: flex;
+            background: rgb(255, 255, 255,0.2);
+        }
+
+        .search-bar {
+            width: 300px;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 25px;  
+            outline: gray; 
+        }
+
+        .container img {
+            height: 100%;
+            width: 100%;
+        }
+
+        .card {
+            width: 325px;
+            background-color: white;
+            border-radius: 30px;
+            overflow: hidden;
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+        
+        .card-content h1 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .card-content p {
+            font-size: 14px;
+            color: black;
+            margin-bottom: 20px;
+        }
+
+        .courses-heading {
+            text-align: center;
+            font-size: 36px;
+            color: white;
+            margin-top: 20px;
+            font-family: 'Futura';
+        }
+
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .footer a {
+            color: rgba(90,112,205,1);
+            text-decoration: none;
+            margin: 0 10px;
+        }
+    </style>
+
+    <!--Navigation bar:-->
+    <div class="navbar">
+        <div style="position: relative;">
+            <img src="NewLogo.png" alt="NewLogo" style="position: absolute; left: 70px; width: 10%;"> 
+        </div>
+        <a href="#">Chat</a>
+        <a href="#">My Account</a>
+        <a href="#">Courses</a>
+        <a href="Login.html">Sign Out</a>
+    </div>
+
+    <!--Search box:-->
+    <div class="search-container">
+        <input type="text" placeholder="Search course..." class="search-bar">
+    </div>
+
+    <!--Courses:-->
+    <div class="box-container">
+        <div class="courses-heading">Courses</div>
+            <div class="card">
+                <a href="#"></a>
+                <img src="Math.png" alt="Math" style="width: 100%;">
+                <p style="color: rgb(90,112,205); text-align: center; font-family: 'Futura', sans-serif;">Matematikë</p>
+            </div>
+        <div class="container">
+            <div class="card">
+                <img src="UBT logo.png" alt="UBT logo" style="width: 100%;">
+                <p style="color: rgb(90,112,205); text-align: center; font-family: 'Futura', sans-serif;">UBT SHKI</p>
+            </div>
+        </div>
+        <div class="container">
+            <div class="card">
+                <img src="Lab.png" alt="Lab" style="width: 100%;">
+                <p style="color: rgb(90,112,205); text-align: center; font-family: 'Futura', sans-serif;">Shkenca Kompjuterike</p>
+            </div>
+        </div>
+    </div>
+
+    <!--Courses:-->
+    <div class="box-container2">
+        <div class="courses-heading">Recent</div>
+            <div class="card">
+                <img src="Web.png" alt="Web" style="width: 100%;">
+                <p style="color: rgb(90,112,205); text-align: center; font-family: 'Futura', sans-serif;">Dizajni dhe Zhvillimi Web-it</p>
+            </div>
+        <div class="container">
+            <div class="card">
+                <img src="JavaScript.png" alt="JavaScript" style="width: 100%;">
+                <p style="color: rgb(90,112,205); text-align: center; font-family: 'Futura', sans-serif;">JavaScript Grupet 1a, 2b</p>
+            </div>
+        </div>
+        <div class="container">
+            <div class="card">
+                <img src="Algorithms.png" alt="Algorithms" style="width: 100%;">
+                <p style="color: rgb(90,112,205); text-align: center; font-family: 'Futura', sans-serif;">Flowcharts</p>
+            </div>
+        </div>
+    </div>
+
+    <!--Background:-->
+    <div class="bg"></div>
+    <div class="bg bg2"></div>
+    <div class="bg bg3"></div>
+
+    <!--Footer:-->
+    <div class="footer">
+        <p>&copy; 2024 Connect Line. All rights reserved.</p>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+    </div>
+</body>
+</html>
