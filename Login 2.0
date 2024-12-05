@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
 </head>
-
 <body>
     <style>
         body {
@@ -60,14 +59,13 @@
             text-align: left;
             font-family: 'Arial';
         }
+        
         .login-box input[type="text"],
         .login-box input[type="password"]{
             width: 85%;
             padding: 10px;
             border-radius: 10px;
-            border-color: #39a1ff;
-            
-           
+            border-color: #39a1ff;          
         }
 
         .login-box button {
@@ -103,8 +101,6 @@
             font-family: 'Arial';
         }
     </style>
-
-
 
     <div class="login-container">
         <div class="login-box">
