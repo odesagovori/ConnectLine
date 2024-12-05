@@ -183,10 +183,10 @@
 
     <!--Navigation bar: -->
     <div class="navbar">
-        <img src="NewLogo.png" alt="NewLogo" style="width: 10%; height: auto; float: left;"> 
+        <img src="ConnectLine.png" alt="ConnectLine" style="width: 10%; height: auto; float: left;"> 
+        <a href="Home.html">Courses</a>
         <a href="#">Chat</a>
         <a href="#">My Account</a>
-        <a href="#">Courses</a>
         <a href="Login.html">Sign Out</a>
     </div>
 
@@ -201,18 +201,18 @@
             <div class="card">
                 <a href="#"></a>
                 <img src="Coding.png" alt="Coding" style="width: 100%;">
-                <p style="color: rgb(90,112,205); text-align: center; font-family: 'Futura', sans-serif;">Shkenca Kompjuterike 2</p>
+                <p style="color: rgb(90,112,205); text-align: center; font-family: 'Futura', sans-serif; font-size: 20px;">Shkenca Kompjuterike 2</p>
             </div>
         <div class="container">
             <div class="card">
                 <img src="Web.png" alt="Web" style="width: 100%;">
-                <p style="color: rgb(90,112,205); text-align: center; font-family: 'Futura', sans-serif;">Dizajni dhe Zhvillimi i Web-it</p>
+                <p style="color: rgb(90,112,205); text-align: center; font-family: 'Futura', sans-serif; font-size: 20px;">Dizajni dhe Zhvillimi i Web-it</p>
             </div>
         </div>
         <div class="container">
             <div class="card">
                 <img src="Database.png" alt="Database" style="width: 100%;">
-                <p style="color: rgb(90,112,205); text-align: center; font-family: 'Futura', sans-serif;">Sistemet e Bazës së të Dhënave</p>
+                <p style="color: rgb(90,112,205); text-align: center; font-family: 'Futura', sans-serif; font-size: 20px;">Sistemet e Bazës së të Dhënave</p>
             </div>
         </div>
     </div>
@@ -222,18 +222,18 @@
         <!--<div class="courses-heading">Recent</div>-->
             <div class="card">
                 <img src="Web.png" alt="Web" style="width: 100%;">
-                <p style="color: rgb(90,112,205); text-align: center; font-family: 'Futura', sans-serif;">Rrjeta Kompjuterike dhe Komunikimi</p>
+                <p style="color: rgb(90,112,205); text-align: center; font-family: 'Futura', sans-serif; font-size: 18px;">Rrjeta Kompjuterike dhe Komunikimi</p>
             </div>
         <div class="container">
             <div class="card">
                 <img src="Algorithms.png" alt="Algorithms" style="width: 100%;">
-                <p style="color: rgb(90,112,205); text-align: center; font-family: 'Futura', sans-serif;">Hyrje ne Algoritme></p>
+                <p style="color: rgb(90,112,205); text-align: center; font-family: 'Futura', sans-serif; font-size: 20px;">Hyrje ne Algoritme></p>
             </div>
         </div>
         <div class="container">
             <div class="card">
                 <img src="Maths.png" alt="Maths" style="width: 100%;">
-                <p style="color: rgb(90,112,205); text-align: center; font-family: 'Futura', sans-serif;">Strukturat Diskrete 1</p>
+                <p style="color: rgb(90,112,205); text-align: center; font-family: 'Futura', sans-serif; font-size: 20px;">Strukturat Diskrete 1</p>
             </div>
         </div>
     </div>
