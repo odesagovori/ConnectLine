@@ -76,8 +76,8 @@
             height: auto;
             border: 2px solid;
             text-align: center;
-            flex: 1 1 280px;
-            margin: 10px;
+            flex: 1 1 280px; /* Fleksibiliteti */
+            margin: 10px; /* Fleksibiliteti */
         }
 
         .box-container2 {
@@ -100,8 +100,8 @@
             height: auto;
             border: 2px solid;
             text-align: center;
-            flex: 1 1 280px;
-            margin: 10px;
+            flex: 1 1 280px; /* Fleksibiliteti */
+            margin: 10px; /* Fleksibiliteti */
         }
 
         .search-container {
