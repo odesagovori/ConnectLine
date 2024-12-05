@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-</head>
-<body>
     <style>
         body {
             margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         .bg {
@@ -44,27 +45,16 @@
         .navbar {
             background-color: rgba(90,112,205,1);
             background-color: linear-gradient(90deg, rgba(90,112,205,1) 0%, rgba(148,185,255,1) 55%);
-            padding: 15px;
+            padding: 10px;
             text-align: right;
             font-family: 'Futura';
         }
 
         .navbar a {
             color: white;
-            margin: 0 15px;
+            margin: 0 10px;
             text-decoration: none;
             font-size: 18px;
-        }
-
-        .box-container {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: space-evenly;
-            align-items: stretch;
-            align-content: center;
-            padding: 50px;
-            height: auto;
         }
 
         .search-container {
@@ -86,23 +76,33 @@
             background: rgba(230, 230, 230, 0.6);
         }
 
-        .container img {
-            height: 100%;
-            width: 100%;
+        .slider {
+            display: flex;
+            overflow: hidden;
+            width: 80%;
+            height: auto;
+            position: relative;
+            margin: 0 auto; /* Center the slider */
+            flex-grow: 1; /* Allow slider to grow */
+        }
+
+        .slider-container {
+            display: flex;
+            transition: transform 0.5s ease;
         }
 
         .card {
             width: 325px;
+            height: 400px; /* Fixed height for cards */
             background-color: white;
             border-radius: 30px;
             overflow: hidden;
-            margin-top: 20px; /* Added gap on top */
-            margin-bottom: 20px; /* Added gap on bottom */
+            margin: 10px;
         }
 
         .card img {
             width: 100%;
-            height: auto;
+            height: 70%; /* Adjusted height for image */
             object-fit: cover;
         }
 
@@ -133,7 +133,7 @@
             background-color: rgb(90,112,205);
             color: white;
             text-align: center;
-            padding: 20px;
+            padding: 10px;
             position: relative;
             bottom: 0;
             width: 100%;
@@ -145,7 +145,7 @@
             margin: 0 10px;
         }
 
-        .register-button {
+        .goToChat-button {
             background-color: rgb(90,112,205);
             color: white;
             border: none;
@@ -154,78 +154,108 @@
             border-radius: 20px;
             padding: 10px 20px;
             cursor: pointer;
-            margin-top: 10px;
-            float: left; /* Aligns the button to the left */
-            margin-left: 10px; /* Adds space from the left border */
+            margin-top: 3px;
+            float: left; 
+            margin-left: 10px; 
             margin-bottom: 10px;
         }
-    </style>
 
-    <!--Navigation bar:-->
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgb(90, 112, 205, 0.5);
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 30px;
+        }
+
+        .arrow-right {
+            right: 10px; /* Adjusted position */
+        }
+    </style>
+</head>
+<body>
     <div class="navbar">
-        <img src="ConnectLine.png" alt="ConnectLine" style="width: auto; height: 30px; float: left; margin-left: 20px;"> 
-        <a href="Home.html">Courses</a>
-        <a href="#">Chat</a>
-        <a href="#">My Account</a>
-        <a href="Login.html">Sign Out</a>
+        <div class="navbar a">
+            <img src="ConnectLine.png" alt="ConnectLine" style="width: auto; height: 30px; float: left; margin-left: 10px;"> 
+            <a href="Home.html">Courses</a>
+            <a href="#">Chat</a>
+            <a href="#">My Account</a>
+            <a href="Login.html">Sign Out</a>
+        </div>
     </div>
 
-    <!--Search box:-->
     <div class="search-container">
         <input type="text" placeholder="Search course..." class="search-bar">
     </div>
 
-    <!--Courses 1-3:-->
-    <div class="box-container">
-        <div class="card">
-            <a href="#"></a>
-            <img src="Coding.png" alt="Coding" style="width: 100%;">
-            <p style="color: rgb(90,112,205); text-align: center; font-family: 'Futura', sans-serif; font-size: 20px;">Shkenca Kompjuterike 2</p>
-            <button class="register-button" onclick="window.location.href='Chats.html'">Go to Chat</button>
+    <div class="courses-heading">Courses</div>
+    <div class="slider">
+        <div class="slider-container">
+            <div class="card">
+                <img src="Coding.png" alt="Coding">
+                <p style="color: rgb(90,112,205); text-align: center; font-family: 'Futura', sans-serif; font-size: 20px;">Shkenca Kompjuterike 2</p>
+                <button class="goToChat-button" onclick="window.location.href='Chats.html'">Go to Chat</button>
+            </div>
+            <div class="card">
+                <img src="Web.png" alt="Web">
+                <p style="color: rgb(90,112,205); text-align: center; font-family: 'Futura', sans-serif; font-size: 20px;">Dizajni dhe Zhvillimi i Web-it</p>
+                <button class="goToChat-button" onclick="window.location.href='Chats.html'">Go to Chat</button>
+            </div>
+            <div class="card">
+                <img src="Database.png" alt="Database">
+                <p style="color: rgb(90,112,205); text-align: center; font-family: 'Futura', sans-serif; font-size: 20px;">Sistemet e Bazës së të Dhënave</p>
+                <button class="goToChat-button" onclick="window.location.href='Chats.html'">Go to Chat</button>
+            </div>
+            <div class="card">
+                <img src="Network.png" alt="Network">
+                <p style="color: rgb(90,112,205); text-align: center; font-family: 'Futura', sans-serif; font-size: 19.75px;">Rrjeta Kompjuterike dhe Komunikimi</p>
+                <button class="goToChat-button" onclick="window.location.href='Chats.html'">Go to Chat</button>
+            </div>
+            <div class="card">
+                <img src="Algorithms.png" alt="Algorithms">
+                <p style="color: rgb(90,112,205); text-align: center; font-family: 'Futura', sans-serif; font-size: 20px;">Hyrje në Algoritme</p>
+                <button class="goToChat-button" onclick="window.location.href='Chats.html'">Go to Chat</button>
+            </div>
+            <div class="card">
+                <img src="Math.png" alt="Math">
+                <p style="color: rgb(90,112,205); text-align: center; font-family: 'Futura', sans-serif; font-size: 20px;">Strukturat Diskrete 1</p>
+                <button class="goToChat-button" onclick="window.location.href='Chats.html'">Go to Chat</button>
+            </div>
         </div>
-        
-        <div class="card">
-            <img src="Web.png" alt="Web" style="width: 100%;">
-            <p style="color: rgb(90,112,205); text-align: center; font-family: 'Futura', sans-serif; font-size: 20px;">Dizajni dhe Zhvillimi i Web-it</p>
-            <button class="register-button" onclick="window.location.href='Chats.html'">Go to Chat</button>
-        </div>
-            
-        <div class="card">
-            <img src="Database.png" alt="Database" style="width: 100%;">
-            <p style="color: rgb(90,112,205); text-align: center; font-family: 'Futura', sans-serif; font-size: 20px;">Sistemet e Bazës së të Dhënave</p>
-            <button class="register-button" onclick="window.location.href='Chats.html'">Go to Chat</button>
-        </div>
-
-    <!--Courses 4-6:-->
-        <div class="card">
-            <img src="Web.png" alt="Web" style="width: 100%;">
-            <p style="color: rgb(90,112,205); text-align: center; font-family: 'Futura', sans-serif; font-size: 18px;">Rrjeta Kompjuterike dhe Komunikimi</p>
-            <button class="register-button" onclick="window.location.href='Chats.html'">Go to Chat</button>
-        </div>
-
-        <div class="card">
-            <img src="Algorithms.png" alt="Algorithms" style="width: 100%;">
-            <p style="color: rgb(90,112,205); text-align: center; font-family: 'Futura', sans-serif; font-size: 20px;">Hyrje në Algoritme</p>
-            <button class="register-button" onclick="window.location.href='Chats.html'">Go to Chat</button>
-        </div>
-  
-        <div class="card">
-            <img src="Math.png" alt="Math" style="width: 100%;">
-            <p style="color: rgb(90,112,205); text-align: center; font-family: 'Futura', sans-serif; font-size: 20px;">Strukturat Diskrete 1</p>
-            <button class="register-button" onclick="window.location.href='Chats.html'">Go to Chat</button>
-        </div>
+        <button class="arrow arrow-right" onclick="moveSlide(1)">&#10095;</button>
     </div>
 
-    <!--Background:-->
     <div class="bg"></div>
     <div class="bg bg2"></div>
     <div class="bg bg3"></div>
 
-    <!--Footer:-->
     <div class="footer">
         <p>&copy; 2024 Connect Line. All rights reserved.</p>
         <a href="#">Privacy Policy</a>
         <a href="#">Terms of Service</a>
     </div>
+
+    <script>
+        let currentIndex = 0;
+
+        function moveSlide(direction) {
+            const slides = document.querySelectorAll('.slider-container .card');
+            const totalSlides = slides.length;
+
+            currentIndex += direction;
+
+            if (currentIndex < 0) {
+                currentIndex = totalSlides - 1; // Loop to last slide
+            } else if (currentIndex >= totalSlides) {
+                currentIndex = 0; // Loop to first slide
+            }
+
+            const offset = -currentIndex * 345; // Adjust for card width and margin
+            document.querySelector('.slider-container').style.transform = `translateX(${offset}px)`;
+        }
+    </script>
 </body>
 </html>
