@@ -201,18 +201,18 @@
             <div class="card">
                 <a href="#"></a>
                 <img src="Math.png" alt="Math" style="width: 100%;">
-                <p style="color: rgb(90,112,205); text-align: center; font-family: 'Futura', sans-serif;">Matematikë</p>
+                <p style="color: rgb(90,112,205); text-align: center; font-family: 'Futura', sans-serif;">Shkenca Kompjuterike 2</p>
             </div>
         <div class="container">
             <div class="card">
                 <img src="UBT logo.png" alt="UBT logo" style="width: 100%;">
-                <p style="color: rgb(90,112,205); text-align: center; font-family: 'Futura', sans-serif;">UBT SHKI</p>
+                <p style="color: rgb(90,112,205); text-align: center; font-family: 'Futura', sans-serif;">Dizajni dhe zhvillimi i Web-it</p>
             </div>
         </div>
         <div class="container">
             <div class="card">
                 <img src="Lab.png" alt="Lab" style="width: 100%;">
-                <p style="color: rgb(90,112,205); text-align: center; font-family: 'Futura', sans-serif;">Shkenca Kompjuterike</p>
+                <p style="color: rgb(90,112,205); text-align: center; font-family: 'Futura', sans-serif;">Sistemet e Bazës së të dhënave</p>
             </div>
         </div>
     </div>
@@ -222,18 +222,18 @@
         <!--<div class="courses-heading">Recent</div>-->
             <div class="card">
                 <img src="Web.png" alt="Web" style="width: 100%;">
-                <p style="color: rgb(90,112,205); text-align: center; font-family: 'Futura', sans-serif;">Dizajni dhe Zhvillimi Web-it</p>
+                <p style="color: rgb(90,112,205); text-align: center; font-family: 'Futura', sans-serif;">Rrjeta Kompjuterike dhe Komunikimi</p>
             </div>
         <div class="container">
             <div class="card">
                 <img src="JavaScript.png" alt="JavaScript" style="width: 100%;">
-                <p style="color: rgb(90,112,205); text-align: center; font-family: 'Futura', sans-serif;">JavaScript Grupet 1a, 2b</p>
+                <p style="color: rgb(90,112,205); text-align: center; font-family: 'Futura', sans-serif;"Hyrje ne Algoritme></p>
             </div>
         </div>
         <div class="container">
             <div class="card">
                 <img src="Algorithms.png" alt="Algorithms" style="width: 100%;">
-                <p style="color: rgb(90,112,205); text-align: center; font-family: 'Futura', sans-serif;">Flowcharts</p>
+                <p style="color: rgb(90,112,205); text-align: center; font-family: 'Futura', sans-serif;">Strukturat Diskrete 1</p>
             </div>
         </div>
     </div>
