@@ -181,7 +181,7 @@
         }
     </style>
 
-    <!--Navigation bar:-->
+    <!--Navigation bar: -->
     <div class="navbar">
         <img src="NewLogo.png" alt="NewLogo" style="width: 10%; height: auto; float: left;"> 
         <a href="#">Chat</a>
