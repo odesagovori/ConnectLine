@@ -207,7 +207,7 @@
 
     <!--Courses:-->
     <div class="box-container">
-        <div class="courses-heading">Courses</div>
+        <!--<div class="courses-heading">Courses</div>-->
             <div class="card">
                 <a href="#"></a>
                 <img src="Math.png" alt="Math" style="width: 100%;">
@@ -229,7 +229,7 @@
 
     <!--Courses:-->
     <div class="box-container2">
-        <div class="courses-heading">Recent</div>
+        <!--<div class="courses-heading">Recent</div>-->
             <div class="card">
                 <img src="Web.png" alt="Web" style="width: 100%;">
                 <p style="color: rgb(90,112,205); text-align: center; font-family: 'Futura', sans-serif;">Dizajni dhe Zhvillimi Web-it</p>
