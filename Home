@@ -200,19 +200,19 @@
         <!--<div class="courses-heading">Courses</div>-->
             <div class="card">
                 <a href="#"></a>
-                <img src="Math.png" alt="Math" style="width: 100%;">
+                <img src="Coding.png" alt="Coding" style="width: 100%;">
                 <p style="color: rgb(90,112,205); text-align: center; font-family: 'Futura', sans-serif;">Shkenca Kompjuterike 2</p>
             </div>
         <div class="container">
             <div class="card">
-                <img src="UBT logo.png" alt="UBT logo" style="width: 100%;">
-                <p style="color: rgb(90,112,205); text-align: center; font-family: 'Futura', sans-serif;">Dizajni dhe zhvillimi i Web-it</p>
+                <img src="Web.png" alt="Web" style="width: 100%;">
+                <p style="color: rgb(90,112,205); text-align: center; font-family: 'Futura', sans-serif;">Dizajni dhe Zhvillimi i Web-it</p>
             </div>
         </div>
         <div class="container">
             <div class="card">
-                <img src="Lab.png" alt="Lab" style="width: 100%;">
-                <p style="color: rgb(90,112,205); text-align: center; font-family: 'Futura', sans-serif;">Sistemet e Bazës së të dhënave</p>
+                <img src="Database.png" alt="Database" style="width: 100%;">
+                <p style="color: rgb(90,112,205); text-align: center; font-family: 'Futura', sans-serif;">Sistemet e Bazës së të Dhënave</p>
             </div>
         </div>
     </div>
@@ -226,13 +226,13 @@
             </div>
         <div class="container">
             <div class="card">
-                <img src="JavaScript.png" alt="JavaScript" style="width: 100%;">
-                <p style="color: rgb(90,112,205); text-align: center; font-family: 'Futura', sans-serif;"Hyrje ne Algoritme></p>
+                <img src="Algorithms.png" alt="Algorithms" style="width: 100%;">
+                <p style="color: rgb(90,112,205); text-align: center; font-family: 'Futura', sans-serif;">Hyrje ne Algoritme></p>
             </div>
         </div>
         <div class="container">
             <div class="card">
-                <img src="Algorithms.png" alt="Algorithms" style="width: 100%;">
+                <img src="Maths.png" alt="Maths" style="width: 100%;">
                 <p style="color: rgb(90,112,205); text-align: center; font-family: 'Futura', sans-serif;">Strukturat Diskrete 1</p>
             </div>
         </div>
