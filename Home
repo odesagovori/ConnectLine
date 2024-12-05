@@ -47,8 +47,6 @@
             padding: 15px;
             text-align: right;
             font-family: 'Futura';
-            flex: 1 1 280px; /* Flexibility added */
-            margin: 10px; /* Margin for spacing */
         }
 
         .navbar a {
@@ -80,6 +78,8 @@
             text-align: center;
             flex: 1 1 280px; /* Flexibility added */
             margin: 10px; /* Margin for spacing */
+            margin-top: 10px; /* Added gap on top */
+            margin-bottom: 10px; /* Added gap on bottom */
         }
 
         .box-container2 {
@@ -104,6 +104,8 @@
             text-align: center;
             flex: 1 1 280px; /* Flexibility added */
             margin: 10px; /* Margin for spacing */
+            margin-top: 20px; /* Added gap on top */
+            margin-bottom: 20px; /* Added gap on bottom */
         }
 
         .search-container {
@@ -135,6 +137,8 @@
             background-color: white;
             border-radius: 30px;
             overflow: hidden;
+            margin-top: 20px; /* Added gap on top */
+            margin-bottom: 20px; /* Added gap on bottom */
         }
 
         .card img {
@@ -181,17 +185,30 @@
             text-decoration: none;
             margin: 0 10px;
         }
+
+        .register-button {
+            background-color: rgb(90,112,205);
+            color: white;
+            border: none;
+            font-family: 'Futura';
+            font-size: 15px;
+            border-radius: 20px;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-top: 10px;
+            float: left; /* Aligns the button to the left */
+            margin-left: 10px; /* Adds space from the left border */
+            margin-bottom: 10px;
+        }
     </style>
 
     <!--Navigation bar:-->
     <div class="navbar">
-        <div class="navbar a">
-            <img src="ConnectLine.png" alt="ConnectLine" style="width: 10%; height: 70%; float: left;"> 
-            <a href="Home.html">Courses</a>
-            <a href="#">Chat</a>
-            <a href="#">My Account</a>
-            <a href="Login.html">Sign Out</a>
-        </div>
+        <img src="ConnectLine.png" alt="ConnectLine" style="width: auto; height: 30px; float: left;"> 
+        <a href="Home.html">Courses</a>
+        <a href="#">Chat</a>
+        <a href="#">My Account</a>
+        <a href="Login.html">Sign Out</a>
     </div>
 
     <!--Search box:-->
@@ -201,41 +218,42 @@
 
     <!--Courses 1-3:-->
     <div class="box-container">
-        <!--<div class="courses-heading">Courses</div>-->
         <div class="card">
             <a href="#"></a>
             <img src="Coding.png" alt="Coding" style="width: 100%;">
             <p style="color: rgb(90,112,205); text-align: center; font-family: 'Futura', sans-serif; font-size: 20px;">Shkenca Kompjuterike 2</p>
+            <button class="register-button" onclick="window.location.href='Chats.html'">Go to Chat</button>
         </div>
         
         <div class="card">
             <img src="Web.png" alt="Web" style="width: 100%;">
             <p style="color: rgb(90,112,205); text-align: center; font-family: 'Futura', sans-serif; font-size: 20px;">Dizajni dhe Zhvillimi i Web-it</p>
+            <button class="register-button" onclick="window.location.href='Chats.html'">Go to Chat</button>
         </div>
             
         <div class="card">
             <img src="Database.png" alt="Database" style="width: 100%;">
             <p style="color: rgb(90,112,205); text-align: center; font-family: 'Futura', sans-serif; font-size: 20px;">Sistemet e Bazës së të Dhënave</p>
+            <button class="register-button" onclick="window.location.href='Chats.html'">Go to Chat</button>
         </div>
-    </div>
 
     <!--Courses 4-6:-->
-    <div class="box-container2">
-        <!--<div class="courses-heading">Recent</div>-->
         <div class="card">
             <img src="Web.png" alt="Web" style="width: 100%;">
             <p style="color: rgb(90,112,205); text-align: center; font-family: 'Futura', sans-serif; font-size: 18px;">Rrjeta Kompjuterike dhe Komunikimi</p>
+            <button class="register-button" onclick="window.location.href='Chats.html'">Go to Chat</button>
         </div>
 
         <div class="card">
             <img src="Algorithms.png" alt="Algorithms" style="width: 100%;">
-            <p style="color: rgb(90,112,205); text-align: center; font-family: 'Futura', sans-serif; font-size: 20px;">Hyrje ne Algoritme></p>
+            <p style="color: rgb(90,112,205); text-align: center; font-family: 'Futura', sans-serif; font-size: 20px;">Hyrje në Algoritme</p>
+            <button class="register-button" onclick="window.location.href='Chats.html'">Go to Chat</button>
         </div>
   
-        
         <div class="card">
-            <img src="Maths.png" alt="Maths" style="width: 100%;">
+            <img src="Math.png" alt="Math" style="width: 100%;">
             <p style="color: rgb(90,112,205); text-align: center; font-family: 'Futura', sans-serif; font-size: 20px;">Strukturat Diskrete 1</p>
+            <button class="register-button" onclick="window.location.href='Chats.html'">Go to Chat</button>
         </div>
     </div>
 
