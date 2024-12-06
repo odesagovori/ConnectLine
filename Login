@@ -118,6 +118,28 @@
             </button2>
         </div>
     </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const BtnSubmit = document.getElementById('submit-btn');
+            BtnSubmit.addEventListener('click', validate);
+
+            function validate(ngjarja) {
+                ngjarja.preventDefault();
+                const perdoruesi = document.getElementById('userid');
+                const fjalkalimi = document.getElementById('pass');
+                if (perdoruesi.value === "") {
+                    alert("Ju lutem shtypni një username."); perdoruesi.focus();
+                    return false;
+                }
+                if (fjalkalimi.value === "") {
+                    alert("Ju lutem shtypni një password."); fjalkalimi.focus();
+                    return false;
+                }
+            }
+        });
+    </script>
+    
 </body>
 
 </html>
