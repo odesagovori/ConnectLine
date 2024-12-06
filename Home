@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+</head>
+<body>
     <style>
         body {
             margin: 0;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
         }
 
         .bg {
@@ -45,16 +44,42 @@
         .navbar {
             background-color: rgba(90,112,205,1);
             background-color: linear-gradient(90deg, rgba(90,112,205,1) 0%, rgba(148,185,255,1) 55%);
-            padding: 10px;
+            padding: 15px;
             text-align: right;
             font-family: 'Futura';
         }
 
         .navbar a {
             color: white;
-            margin: 0 10px;
+            margin: 0 15px;
             text-decoration: none;
             font-size: 18px;
+        }
+
+        .box-container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-items: stretch;
+            align-content: center;
+            padding: 50px;
+            height: auto;
+        }
+
+        .boxes-box {
+            border-radius: 30px;
+            background: white;
+            padding: 80px 1px;
+            box-shadow: 0 0 100px rgba(0, 0, 0, 0.1);
+            width: 280px;
+            height: auto;
+            border: 2px solid;
+            text-align: center;
+            flex: 1 1 280px; /* Flexibility added */
+            margin: 10px; /* Margin for spacing */
+            margin-top: 10px; /* Added gap on top */
+            margin-bottom: 10px; /* Added gap on bottom */
         }
 
         .search-container {
@@ -64,7 +89,7 @@
             align-items: center;
         }
 
-        .search-bar{
+        .search-bar {
             width: 300px;
             padding: 10px 20px;
             font-size: 16px;
@@ -73,36 +98,22 @@
             outline: none; 
             align-items: center;
             display: flex;
-            background: rgba(230, 230, 230, 0.6);
-        }
-
-        .slider {
-            display: flex;
-            overflow: hidden;
-            width: 80%;
-            height: auto;
-            position: relative;
-            margin: 0 auto; /* Center the slider */
-            flex-grow: 1; /* Allow slider to grow */
-        }
-
-        .slider-container {
-            display: flex;
-            transition: transform 0.5s ease;
+            background: white;
+            color: black;
         }
 
         .card {
             width: 325px;
-            height: 400px; /* Fixed height for cards */
             background-color: white;
             border-radius: 30px;
             overflow: hidden;
-            margin: 10px;
+            margin-top: 20px; /* Added gap on top */
+            margin-bottom: 20px; /* Added gap on bottom */
         }
 
         .card img {
             width: 100%;
-            height: 70%; /* Adjusted height for image */
+            height: auto;
             object-fit: cover;
         }
 
@@ -133,7 +144,7 @@
             background-color: rgb(90,112,205);
             color: white;
             text-align: center;
-            padding: 10px;
+            padding: 20px;
             position: relative;
             bottom: 0;
             width: 100%;
@@ -145,7 +156,7 @@
             margin: 0 10px;
         }
 
-        .goToChat-button {
+        .register-button {
             background-color: rgb(90,112,205);
             color: white;
             border: none;
@@ -154,108 +165,94 @@
             border-radius: 20px;
             padding: 10px 20px;
             cursor: pointer;
-            margin-top: 3px;
-            float: left; 
-            margin-left: 10px; 
+            margin-top: 10px;
+            float: left; /* Aligns the button to the left */
+            margin-left: 10px; /* Adds space from the left border */
             margin-bottom: 10px;
         }
-
-        .arrow {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgb(90, 112, 205, 0.5);
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            border-radius: 30px;
-        }
-
-        .arrow-right {
-            right: 10px; /* Adjusted position */
-        }
     </style>
-</head>
-<body>
+
+    <!--Navigation bar:-->
     <div class="navbar">
-        <div class="navbar a">
-            <img src="ConnectLine.png" alt="ConnectLine" style="width: auto; height: 30px; float: left; margin-left: 10px;"> 
-            <a href="Home.html">Courses</a>
-            <a href="#">Chat</a>
-            <a href="#">My Account</a>
-            <a href="Login.html">Sign Out</a>
-        </div>
+        <img src="ConnectLine.png" alt="ConnectLine" style="width: auto; height: 30px; float: left;"> 
+        <a href="Home.html">Courses</a>
+        <a href="#">Chat</a>
+        <a href="#">My Account</a>
+        <a href="Login.html">Sign Out</a>
     </div>
 
+    <!--Courses Heading:-->
+    <h1 class="courses-heading">Courses</h1>
+
+    <!--Search box:-->
     <div class="search-container">
-        <input type="text" placeholder="Search course..." class="search-bar">
+        <input type="text" placeholder="Search course..." class="search-bar" id="courseSearch" oninput="filterCourses()">
     </div>
 
-    <div class="courses-heading">Courses</div>
-    <div class="slider">
-        <div class="slider-container">
-            <div class="card">
-                <img src="Coding.png" alt="Coding">
-                <p style="color: rgb(90,112,205); text-align: center; font-family: 'Futura', sans-serif; font-size: 20px;">Shkenca Kompjuterike 2</p>
-                <button class="goToChat-button" onclick="window.location.href='Chats.html'">Go to Chat</button>
-            </div>
-            <div class="card">
-                <img src="Web.png" alt="Web">
-                <p style="color: rgb(90,112,205); text-align: center; font-family: 'Futura', sans-serif; font-size: 20px;">Dizajni dhe Zhvillimi i Web-it</p>
-                <button class="goToChat-button" onclick="window.location.href='Chats.html'">Go to Chat</button>
-            </div>
-            <div class="card">
-                <img src="Database.png" alt="Database">
-                <p style="color: rgb(90,112,205); text-align: center; font-family: 'Futura', sans-serif; font-size: 20px;">Sistemet e Bazës së të Dhënave</p>
-                <button class="goToChat-button" onclick="window.location.href='Chats.html'">Go to Chat</button>
-            </div>
-            <div class="card">
-                <img src="Network.png" alt="Network">
-                <p style="color: rgb(90,112,205); text-align: center; font-family: 'Futura', sans-serif; font-size: 19.75px;">Rrjeta Kompjuterike dhe Komunikimi</p>
-                <button class="goToChat-button" onclick="window.location.href='Chats.html'">Go to Chat</button>
-            </div>
-            <div class="card">
-                <img src="Algorithms.png" alt="Algorithms">
-                <p style="color: rgb(90,112,205); text-align: center; font-family: 'Futura', sans-serif; font-size: 20px;">Hyrje në Algoritme</p>
-                <button class="goToChat-button" onclick="window.location.href='Chats.html'">Go to Chat</button>
-            </div>
-            <div class="card">
-                <img src="Math.png" alt="Math">
-                <p style="color: rgb(90,112,205); text-align: center; font-family: 'Futura', sans-serif; font-size: 20px;">Strukturat Diskrete 1</p>
-                <button class="goToChat-button" onclick="window.location.href='Chats.html'">Go to Chat</button>
-            </div>
+    <!--Courses:-->
+    <div class="box-container" id="courseContainer">
+        <div class="card" data-title="shkenca kompjuterike 2">
+            <img src="Coding.png" alt="Coding" style="width: 100%;">
+            <p style="color: rgb(90,112,205); text-align: center; font-family: 'Futura', sans-serif; font-size: 20px;">Shkenca Kompjuterike 2</p>
+            <button class="register-button" onclick="window.location.href='Chats.html'">Go to Chat</button>
         </div>
-        <button class="arrow arrow-right" onclick="moveSlide(1)">&#10095;</button>
+        
+        <div class="card" data-title="dizajni dhe zhvillimi i web-it">
+            <img src="Web.png" alt="Web" style="width: 100%;">
+            <p style="color: rgb(90,112,205); text-align: center; font-family: 'Futura', sans-serif; font-size: 20px;">Dizajni dhe Zhvillimi i Web-it</p>
+            <button class="register-button" onclick="window.location.href='Chats.html'">Go to Chat</button>
+        </div>
+            
+        <div class="card" data-title="sistemet e bazës së të dhënave">
+            <img src="Database.png" alt="Database" style="width: 100%;">
+            <p style="color: rgb(90,112,205); text-align: center; font-family: 'Futura', sans-serif; font-size: 20px;">Sistemet e Bazës së të Dhënave</p>
+            <button class="register-button" onclick="window.location.href='Chats.html'">Go to Chat</button>
+        </div>
+
+        <div class="card" data-title="rrjeta kompjuterike dhe komunikimi">
+            <img src="Web.png" alt="Web" style="width: 100%;">
+            <p style="color: rgb(90,112,205); text-align: center; font-family: 'Futura', sans-serif; font-size: 19.8px;">Rrjeta Kompjuterike dhe Komunikimi</p>
+            <button class="register-button" onclick="window.location.href='Chats.html'">Go to Chat</button>
+        </div>
+
+        <div class="card" data-title="hyrje në algoritme">
+            <img src="Algorithms.png" alt="Algorithms" style="width: 100%;">
+            <p style="color: rgb(90,112,205); text-align: center; font-family: 'Futura', sans-serif; font-size: 20px;">Hyrje në Algoritme</p>
+            <button class="register-button" onclick="window.location.href='Chats.html'">Go to Chat</button>
+        </div>
+  
+        <div class="card" data-title="strukturat diskrete 1">
+            <img src="Math.png" alt="Math" style="width: 100%;">
+            <p style="color: rgb(90,112,205); text-align: center; font-family: 'Futura', sans-serif; font-size: 20px;">Strukturat Diskrete 1</p>
+            <button class="register-button" onclick="window.location.href='Chats.html'">Go to Chat</button>
+        </div>
     </div>
 
+    <script>
+        function filterCourses() {
+            const searchInput = document.getElementById('courseSearch').value.toLowerCase();
+            const courses = document.querySelectorAll('.card');
+            courses.forEach(course => {
+                const title = course.getAttribute('data-title');
+                if (title.includes(searchInput)) {
+                    course.style.display = 'block';
+                } else {
+                    course.style.display = 'none';
+                }
+            });
+        }
+    </script>
+
+    <!--Background:-->
     <div class="bg"></div>
     <div class="bg bg2"></div>
     <div class="bg bg3"></div>
 
+    <!--Footer:-->
     <div class="footer">
         <p>&copy; 2024 Connect Line. All rights reserved.</p>
         <a href="#">Privacy Policy</a>
         <a href="#">Terms of Service</a>
     </div>
-
-    <script>
-        let currentIndex = 0;
-
-        function moveSlide(direction) {
-            const slides = document.querySelectorAll('.slider-container .card');
-            const totalSlides = slides.length;
-
-            currentIndex += direction;
-
-            if (currentIndex < 0) {
-                currentIndex = totalSlides - 1; // Loop to last slide
-            } else if (currentIndex >= totalSlides) {
-                currentIndex = 0; // Loop to first slide
-            }
-
-            const offset = -currentIndex * 345; // Adjust for card width and margin
-            document.querySelector('.slider-container').style.transform = `translateX(${offset}px)`;
-        }
-    </script>
 </body>
 </html>
