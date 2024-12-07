@@ -5,183 +5,177 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Account</title>
     <style>
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: linear-gradient(90deg, rgba(36,198,220,1) 0%, rgba(81,74,157,1) 55%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
 
-    body {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-}
+        header .Account img {
+            width: 20%;
+            max-width: 150px;
+            display: block;
+            margin: 0 auto;
+        }
 
+        h1 {
+            margin-top: 10px;
+        
+        }
 
-header {
-    background: linear-gradient(90deg, rgba(36,198,220,1) 0%, rgba(81,74,157,1) 55%);
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0;
+        }
 
-header .Account img {
-    width: 20%;
-    max-width: 150px;
-    display: block;
-    margin: 0 auto;
-}
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
 
-h1 {
-    margin-top: 10px;
-   
-}
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
 
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
 
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 10px 0;
-}
+        /* Main Content Styles */
+        main {
+            padding: 20px;
+        }
 
-nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
+        /* Profile Section */
+        #profile {
+            background-color: white;
+            padding: 20px;
+            border-radius: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
 
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-}
+        #profile h2 {
+            font-size: 25px;
+            margin-bottom: 10px;
+        }
 
-nav ul li a:hover {
-    text-decoration: underline;
-}
+        #profile p {
+            font-size: 19px;
+            margin: 5px 0;
+        }
 
-/* Main Content Styles */
-main {
-    padding: 20px;
-}
+        #profile button {
+            background-color: #09f;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 10px;
+            font-size: 17px;
+        }
 
-/* Profile Section */
-#profile {
-    background-color: white;
-    padding: 20px;
-    border-radius: 30px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-}
+        #profile button:hover {
+            background-color: gray;
+        }
+        /* Courses Section */
+        #courses {
+            background-color: white;
+            padding: 20px;
+            border-radius: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
 
-#profile h2 {
-    font-size: 25px;
-    margin-bottom: 10px;
-}
+        #courses h2 {
+            font-size: 25px;
+            margin-bottom: 10px;
+        }
 
-#profile p {
-    font-size: 19px;
-    margin: 5px 0;
-}
+        #courses ul {
+            list-style: none;
+            padding: 0;
+        }
 
-#profile button {
-    background-color: #09f;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 10px;
-    font-size: 17px;
-}
+        #courses ul li {
+            font-size: 19px;
+            margin: 5px 0;
+        }
 
-#profile button:hover {
-    background-color: gray;
-}
-/* Courses Section */
-#courses {
-    background-color: white;
-    padding: 20px;
-    border-radius: 30px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-}
+        /* Settings Section */
+        #settings {
+            background-color: white;
+            padding: 20px;
+            border-radius: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
 
-#courses h2 {
-    font-size: 25px;
-    margin-bottom: 10px;
-}
+        #settings h2 {
+            font-size: 25px;
+            margin-bottom: 10px;
+        }
 
-#courses ul {
-    list-style: none;
-    padding: 0;
-}
+        #settings form {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
 
-#courses ul li {
-    font-size: 19px;
-    margin: 5px 0;
-}
+        #settings label {
+            font-size: 19px;
+            margin-bottom: 8px;
+        }
 
-/* Settings Section */
-#settings {
-    background-color: white;
-    padding: 20px;
-    border-radius: 30px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-#settings h2 {
-    font-size: 25px;
-    margin-bottom: 10px;
-}
-
-#settings form {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-}
-
-#settings label {
-    font-size: 19px;
-    margin-bottom: 8px;
-}
-
-#settings input[type="password"] {
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    border-color: #09f;
-    font-size: 17px;
-}
+        #settings input[type="password"] {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            border-color: #09f;
+            font-size: 17px;
+        }
 
 
-#settings button {
-    background-color: #09f;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 10px;
-    font-size: 17px;
-    cursor: pointer;
-}
+        #settings button {
+            background-color: #09f;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            font-size: 17px;
+            cursor: pointer;
+        }
 
-#settings button:hover {
-    background-color: gray;
-}
+        #settings button:hover {
+            background-color: gray;
+        }
 
-/* Footer Styles */
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-}
+        /* Footer Styles */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
 
-footer p {
-    margin: 0;
-    font-size: 1em;
-}
-
+        footer p {
+            margin: 0;
+            font-size: 1em;
+        }
     </style>
-
 </head>
 <body>
     <header>
@@ -197,7 +191,6 @@ footer p {
         </nav>
     </header>
     <main>
-     
         <section id="profile">
             <h2>Profile Information</h2>
             <p>Name:</p>
@@ -207,14 +200,14 @@ footer p {
         </section>
         <section id="courses">
             <h2>My Courses</h2>
-            <ul>
-                <li>Course 1: Shkenca Kompjuterike 2</li>
-                <li>Course 2: Dizajni dhe Zhvillimi i Web-it</li>
-                <li>Course 3: Strukturat e Bazës së të Dhënave</li>
-                <li>Course 4: Rrjeta Kompjuterike dhe Komunikimi</li>
-                <li>Course 5: Hyrje në Algoritme</li>
-                <li>Course 6: Strukturat Diskrete 1</li>
-            </ul>
+                <ul>
+                    <li>Course 1: Shkenca Kompjuterike 2</li>
+                    <li>Course 2: Dizajni dhe Zhvillimi i Web-it</li>
+                    <li>Course 3: Strukturat e Bazës së të Dhënave</li>
+                    <li>Course 4: Rrjeta Kompjuterike dhe Komunikimi</li>
+                    <li>Course 5: Hyrje në Algoritme</li>
+                    <li>Course 6: Strukturat Diskrete 1</li>
+                </ul>
         </section>
         <section id="settings">
             <h2>Account Settings</h2>
@@ -224,9 +217,9 @@ footer p {
                 <button type="submit">Update Password</button>
             </form>
         </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 ConnectLine. All rights reserved.</p>
-    </footer>
+        </main>
+        <footer>
+            <p>&copy; 2024 ConnectLine. All rights reserved.</p>
+        </footer>
 </body>
 </html>
