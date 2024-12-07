@@ -12,7 +12,7 @@
     </div> <!---->
     <style>
         body {
-            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background: linear-gradient(-45deg, rgba(36, 198, 220, 1), rgba(81, 74, 157, 1), rgb(90, 112, 205), rgba(36,198,220,1));
             background-size: 400% 400%;
             animation: gradient 15s ease infinite;
             height: 100vh;
