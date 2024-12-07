@@ -13,7 +13,7 @@
 
         .bg {
             animation:slide 3s ease-in-out infinite alternate;
-            background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
+            background-image: linear-gradient(-60deg, #09f 50%, #6c3 50%);
             bottom:0;
             left:-50%;
             opacity:.5;
@@ -138,7 +138,7 @@
 
         .courses-heading {
             text-align: center;
-            font-size: 30px;
+            font-size: 50px;
             color: white;
             margin-top: 20px;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -178,10 +178,10 @@
 
     <!--Navigation bar:-->
     <div class="navbar">
-        <img src="ConnectLine.png" alt="ConnectLine" style="width: auto; height: 30px; float: left;"> 
+        <img src="ConnectLine.png" alt="ConnectLine" style="width: auto; height: 50px; float: left;"> 
         <a href="Home.html">Courses</a>
         <a href="#">Chat</a>
-        <a href="#">My Account</a>
+        <a href="My Account.html">My Account</a>
         <a href="Login.html">Sign Out</a>
     </div>
 
@@ -197,37 +197,37 @@
     <div class="box-container" id="courseContainer">
         <div class="card" data-title="shkenca kompjuterike 2">
             <img src="Coding.png" alt="Coding" style="width: 100%;">
-            <p style="color: rgb(90,112,205); text-align: center; font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 20px;">Shkenca Kompjuterike 2</p>
+            <p style="color: rgb(90,112,205); text-align: center; font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 18px;">Shkenca Kompjuterike 2</p>
             <button class="register-button" onclick="window.location.href='Chats.html'">Go to Chat</button>
         </div>
         
         <div class="card" data-title="dizajni dhe zhvillimi i web-it">
             <img src="Web.png" alt="Web" style="width: 100%;">
-            <p style="color: rgb(90,112,205); text-align: center; font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 20px;">Dizajni dhe Zhvillimi i Web-it</p>
+            <p style="color: rgb(90,112,205); text-align: center; font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 18px;">Dizajni dhe Zhvillimi i Web-it</p>
             <button class="register-button" onclick="window.location.href='Chats.html'">Go to Chat</button>
         </div>
             
         <div class="card" data-title="sistemet e bazës së të dhënave">
             <img src="Database.png" alt="Database" style="width: 100%;">
-            <p style="color: rgb(90,112,205); text-align: center; font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 20px;">Sistemet e Bazës së të Dhënave</p>
+            <p style="color: rgb(90,112,205); text-align: center; font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 18px;">Sistemet e Bazës së të Dhënave</p>
             <button class="register-button" onclick="window.location.href='Chats.html'">Go to Chat</button>
         </div>
 
         <div class="card" data-title="rrjeta kompjuterike dhe komunikimi">
-            <img src="Web.png" alt="Web" style="width: 100%;">
-            <p style="color: rgb(90,112,205); text-align: center; font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 19.8px;">Rrjeta Kompjuterike dhe Komunikimi</p>
+            <img src="Network.png" alt="Network" style="width: 100%;">
+            <p style="color: rgb(90,112,205); text-align: center; font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 17.5px;">Rrjeta Kompjuterike dhe Komunikimi</p>
             <button class="register-button" onclick="window.location.href='Chats.html'">Go to Chat</button>
         </div>
 
         <div class="card" data-title="hyrje në algoritme">
             <img src="Algorithms.png" alt="Algorithms" style="width: 100%;">
-            <p style="color: rgb(90,112,205); text-align: center; font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 20px;">Hyrje në Algoritme</p>
+            <p style="color: rgb(90,112,205); text-align: center; font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 18px;">Hyrje në Algoritme</p>
             <button class="register-button" onclick="window.location.href='Chats.html'">Go to Chat</button>
         </div>
   
         <div class="card" data-title="strukturat diskrete 1">
             <img src="Math.png" alt="Math" style="width: 100%;">
-            <p style="color: rgb(90,112,205); text-align: center; font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 20px;">Strukturat Diskrete 1</p>
+            <p style="color: rgb(90,112,205); text-align: center; font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 18px;">Strukturat Diskrete 1</p>
             <button class="register-button" onclick="window.location.href='Chats.html'">Go to Chat</button>
         </div>
     </div>
