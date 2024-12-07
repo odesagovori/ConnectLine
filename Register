@@ -16,7 +16,7 @@
         .navbar {
             padding: 18px;
             text-align: center;
-            font-family: 'Arial';
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
         }
 
         .navbar a {
@@ -53,25 +53,34 @@
         }
 
         .login-box input[type="text"]::placeholder,
+        .login-box input[type="text"]::placeholder,
+        .login-box input[type="text"]::placeholder,
+        .login-box input[type="text"]::placeholder,
+        .login-box input[type="password"]::placeholder,
         .login-box input[type="password"]::placeholder {
             color: gray;
             font-size: 15px;
             text-align: left;
             font-family: 'Arial';
+
         }
         .login-box input[type="text"],
-        .login-box input[type="password"] {
+        .login-box input[type="text"],
+        .login-box input[type="text"],
+        .login-box input[type="text"],
+        .login-box input[type="password"],
+        .login-box input[type="password"]{
             width: 85%;
             padding: 10px;
             border-radius: 10px;
             border-color: #39a1ff;
+
         }
         
-        .register-text {
+        .register-text{
             color:  #39a1ff;
-            font-family: 'Arial';
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
         }
-        
         .login-box button {
             background: #39a1ff;
             color: white;
@@ -82,13 +91,14 @@
             cursor: pointer;
             font-size: 16px;
             text-align: center;
-            font-family: 'Arial';
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
         }
 
         .login-box button:hover {
             background-color: gray;
         }
     </style>
+
 
     <div class="login-container">
         <div class="login-box">
