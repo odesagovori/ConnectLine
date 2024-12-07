@@ -147,6 +147,7 @@
         .footer {
             background-color: rgb(90,112,205);
             color: white;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
             text-align: center;
             padding: 20px;
             position: relative;
@@ -158,6 +159,7 @@
             color: black;
             text-decoration: none;
             margin: 0 10px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
         }
 
         .register-button {
