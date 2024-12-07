@@ -42,8 +42,8 @@
         }
 
         .navbar {
-            background-color: rgba(90,112,205,1);
-            background-color: linear-gradient(90deg, rgba(90,112,205,1) 0%, rgba(148,185,255,1) 55%);
+            /* background-color: rgba(90,112,205,1); */
+            /* background-color: linear-gradient(90deg, rgba(90,112,205,1) 0%, rgba(148,185,255,1) 55%); */
             padding: 15px;
             text-align: right;
             font-family: Verdana, Geneva, Tahoma, sans-serif;

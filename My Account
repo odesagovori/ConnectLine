@@ -191,9 +191,7 @@ footer p {
         <h1>My Account</h1>
         <nav>
             <ul>
-                <li><a href="#profile">Profile</a></li>
-                <li><a href="#courses">My Courses</a></li>
-                <li><a href="#settings">Settings</a></li>
+                <li><a href="Home.html">Courses</a></li>
                 <li><a href="Login.html">Logout</a></li>
             </ul>
         </nav>
