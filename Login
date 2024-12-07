@@ -111,12 +111,9 @@
             <br> <br>
             <button id="submit-btn">Login</button>
             <br> <br>
-            <div class="button2">
-                <a href="Register.html" style="text-decoration:none;">Don't have an account? Create one here.</a>
-            </div>
+            <a href="Register.html" style="text-decoration: none; font-family: Arial, Helvetica, sans-serif; font-size: 13px;">Don't have an account? Create one here.</a>
         </div>
     </div>
-    
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const BtnSubmit = document.getElementById('submit-btn');
@@ -136,7 +133,6 @@
                 }
             }
         });
-    
     </script>
 </body>
 </html>
