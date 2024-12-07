@@ -7,7 +7,7 @@
     <style>
 
     body {
-    font-family: "Serif";
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
@@ -15,7 +15,7 @@
 
 
 header {
-    background-color: rgb(90,112,205);
+    background: linear-gradient(90deg, rgba(36,198,220,1) 0%, rgba(81,74,157,1) 55%);
     color: white;
     padding: 20px;
     text-align: center;
@@ -30,7 +30,7 @@ header .Account img {
 
 h1 {
     margin-top: 10px;
-    font-size: 2em;
+   
 }
 
 
@@ -48,7 +48,7 @@ nav ul li {
 nav ul li a {
     color: white;
     text-decoration: none;
-    font-size: 1.1em;
+    font-size: 18px;
 }
 
 nav ul li a:hover {
@@ -70,27 +70,27 @@ main {
 }
 
 #profile h2 {
-    font-size: 1.8em;
+    font-size: 25px;
     margin-bottom: 10px;
 }
 
 #profile p {
-    font-size: 1.2em;
+    font-size: 19px;
     margin: 5px 0;
 }
 
 #profile button {
-    background-color:rgba(90,112,205,1);
+    background-color: #09f;
     color: white;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
     border-radius: 10px;
-    font-size: 1.1em;
+    font-size: 17px;
 }
 
 #profile button:hover {
-    background-color:rgba(90,112,205,1) ;
+    background-color: gray;
 }
 /* Courses Section */
 #courses {
@@ -102,7 +102,7 @@ main {
 }
 
 #courses h2 {
-    font-size: 1.8em;
+    font-size: 25px;
     margin-bottom: 10px;
 }
 
@@ -112,7 +112,7 @@ main {
 }
 
 #courses ul li {
-    font-size: 1.2em;
+    font-size: 19px;
     margin: 5px 0;
 }
 
@@ -125,17 +125,18 @@ main {
 }
 
 #settings h2 {
-    font-size: 1.8em;
+    font-size: 25px;
     margin-bottom: 10px;
 }
 
 #settings form {
     display: flex;
     flex-direction: column;
+    gap: 2px;
 }
 
 #settings label {
-    font-size: 1.2em;
+    font-size: 19px;
     margin-bottom: 8px;
 }
 
@@ -144,23 +145,23 @@ main {
     margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 10px;
-    border-color: #39a1ff;
-    font-size: 1.1em;
+    border-color: #09f;
+    font-size: 17px;
 }
 
 
 #settings button {
-    background-color: rgba(90,112,205,1);
+    background-color: #09f;
     color: white;
     padding: 10px 20px;
     border: none;
     border-radius: 10px;
-    font-size: 1.1em;
+    font-size: 17px;
     cursor: pointer;
 }
 
 #settings button:hover {
-    background-color: rgba(90,112,205,1);
+    background-color: gray;
 }
 
 /* Footer Styles */
@@ -193,7 +194,7 @@ footer p {
                 <li><a href="#profile">Profile</a></li>
                 <li><a href="#courses">My Courses</a></li>
                 <li><a href="#settings">Settings</a></li>
-                <li><a href="#logout">Logout</a></li>
+                <li><a href="Login.html">Logout</a></li>
             </ul>
         </nav>
     </header>
