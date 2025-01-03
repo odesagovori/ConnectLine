@@ -1,0 +1,63 @@
+<?php
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "your_database_name";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = htmlspecialchars($_POST['name']);
+    $lastname = htmlspecialchars($_POST['lastname']);
+    $email = htmlspecialchars($_POST['email']);
+    $username = htmlspecialchars($_POST['username']);
+    $password = htmlspecialchars($_POST['password']);
+    $repassword = htmlspecialchars($_POST['repassword']);
+
+    $errors = [];
+
+    if (empty($name)) {
+        $errors[] = "Please enter your name.";
+    }
+    if (empty($lastname)) {
+        $errors[] = "Please enter your last name.";
+    }
+    if (empty($email)) {
+        $errors[] = "Please enter your email.";
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $errors[] = "Please enter a valid email.";
+    }
+    if (empty($username)) {
+        $errors[] = "Please enter a username.";
+    }
+    if (empty($password)) {
+        $errors[] = "Please enter a password.";
+    }
+    if (empty($repassword)) {
+        $errors[] = "Please re-enter your password.";
+    } elseif ($password !== $repassword) {
+        $errors[] = "Passwords do not match.";
+    }
+
+    if (empty($errors)) {
+        $stmt = $conn->prepare("INSERT INTO users (name, lastname, email, username, password) VALUES (?, ?, ?, ?, ?)");
+        
+        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+        
+        $stmt->bind_param("sssss", $name, $lastname, $email, $username, $hashed_password);
+        
+        if ($stmt->execute()) {
+            echo "Account created successfully!";
+        } else {
+            echo "Error: " . $stmt->error;
+        }
+    
+        $stmt->close();
+    }
+}
+?>
