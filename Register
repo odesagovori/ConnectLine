@@ -106,6 +106,7 @@
             <div class="register-text">
                 <h3>Register</h3>
             </div>
+        <form method="POST" action="process_register.php">
             <input type="text" id="name" placeholder="Name" style="width: 200px">
             <br> <br>
             <input type="text" id="lastname" placeholder="Last Name" style="width: 200px">
@@ -119,6 +120,7 @@
             <input type="password" id="repassword" placeholder="Re-enter Password" style="width: 200px">
             <br> <br>
             <button id="submit-btn">Create Account</button>
+        </form>
         </div>
     </div>
     <script>
