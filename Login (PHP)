@@ -1,3 +1,7 @@
+<?php
+ob_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -113,7 +117,7 @@
             <button id="submit-btn">Login</button>
         </form>
             <br> <br>
-            <a href="Register.html" style="text-decoration: none; font-family: Arial, Helvetica, sans-serif; font-size: 13px;">Don't have an account? Create one here.</a>
+            <a href="Register.php" style="text-decoration: none; font-family: Arial, Helvetica, sans-serif; font-size: 13px;">Don't have an account? Create one here.</a>
         </div>
     </div>
     
@@ -157,10 +161,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Attempt to log in
     if ($user->login($email, $password)) {
-        header("Location: home.php"); // Redirect to home page
+        header("Location: Home.php"); // Redirect to home page
         exit;
     } else {
-        echo "Invalid login credentials!";
+        echo "<script>alert('Invalid login credentials!');</script>";
     }
 }
 ?>
