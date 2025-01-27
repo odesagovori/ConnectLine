@@ -9,10 +9,13 @@
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: rgb(90,112,205);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
         header {
-            background: linear-gradient(90deg, rgba(36,198,220,1) 0%, rgba(81,74,157,1) 55%);
+            background: rgb(90,112,205);
             color: white;
             padding: 20px;
             text-align: center;
@@ -27,33 +30,29 @@
 
         h1 {
             margin-top: 10px;
-        
         }
 
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 10px 0;
+        .navbar {
+            padding: 15px;
+            text-align: right;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
         }
 
-        nav ul li {
-            display: inline;
-            margin: 0 15px;
-        }
-
-        nav ul li a {
+        .navbar a {
             color: white;
+            margin: 0 15px;
             text-decoration: none;
             font-size: 18px;
         }
-
-        nav ul li a:hover {
+        
+        .navbar a:hover {
             text-decoration: underline;
         }
 
         /* Main Content Styles */
         main {
             padding: 20px;
+            flex: 1;
         }
 
         /* Profile Section */
@@ -145,7 +144,6 @@
             font-size: 17px;
         }
 
-
         #settings button {
             background-color: #09f;
             color: white;
@@ -160,20 +158,20 @@
             background-color: gray;
         }
 
-        .footer {
+        /* Footer Styles */
+        footer {
             background-color: rgb(90,112,205);
             color: white;
             text-align: center;
-            padding: 20px;
+            padding: 10px;
             position: relative;
-            bottom: 0;
             width: 100%;
+            bottom: 0;
         }
 
-        .footer a {
-            color: black;
-            text-decoration: none;
-            margin: 0 10px;
+        footer p {
+            margin: 0;
+            font-size: 1em;
         }
     </style>
 </head>
@@ -183,11 +181,10 @@
             <img src="LoginPic.png" style="width: 20%" >
         </div>
         <h1>My Account</h1>
-        <nav>
-            <ul>
-                <li><a href="Home.html">Courses</a></li>
-                <li><a href="Login.html">Logout</a></li>
-            </ul>
+        <nav class="navbar">
+            <a href="Dashboard.php">Dashboard</a>
+            <a href="Home.php">Courses</a>
+            <a href="Login.php">Logout</a>
         </nav>
     </header>
     <main>
@@ -217,11 +214,9 @@
                 <button type="submit">Update Password</button>
             </form>
         </section>
-        </main>
-        <div class="footer">
-            <p>&copy; 2024 Connect Line. All rights reserved.</p>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
-        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 ConnectLine. All rights reserved.</p>
+    </footer>
 </body>
 </html>
