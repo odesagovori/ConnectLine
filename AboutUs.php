@@ -1,348 +1,216 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About Us</title>
     <style>
-        *{
-            margin: 0px;
-            padding: 0px;
-            box-sizing: border-box;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-        }
-        body{
-            background: linear-gradient(90deg, rgba(36,198,220,1) 0%, rgba(81,74,157,1) 55%);
-            .navbar {
-            /* background-color: rgba(90,112,205,1); */
-            /* background-color: linear-gradient(90deg, rgba(90,112,205,1) 0%, rgba(148,185,255,1) 55%); */
-            padding: 15px;
-            text-align: right;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            
-        }
-    
+    body {
+        margin: 0;
+        background-color: #e3f2fd;
+        background: linear-gradient(-45deg, #fbf9fa, #a5cffc, #ddeeff, rgb(90,112,205));
+        background-size: 400% 400%;
+        animation: gradient 10s ease infinite;
+        height: 100vh;
+    }
 
-        .navbar a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            font-size: 18px;
+    @keyframes gradient {
+        0% {
+            background-position: 0% 50%;
         }
-        
-        .navbar a:hover {
-            text-decoration: underline;
+        50% {
+            background-position: 100% 50%;
         }
+        100% {
+            background-position: 0% 50%;
         }
-        .heading{
-            width: 90%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            text-align: center;
-            margin: 20px auto;
-        }
-        .heading h1{
-            font-size: 50px;
-            color:white ;
-            margin-bottom: 25px;
-            position: relative;
-        }
-        .heading h1::after{
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: 4px;
-            display: block;
-            margin: 0 auto;
-            background-color:rgba(36,198,220,1);
-        }
-        .heading p{
-            font-size: 18px;
-            color:white;
-            margin-bottom:35px;
+    }
 
-        }
-        .container{
-            width: 90%;
-            margin:0 auto;
-            padding: 10px 20px;
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    ::-webkit-scrollbar {
+        height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 25px;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #6e93f7;
+        border-radius: 25px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #4070f4;
+    }
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgb(90,112,205);
+        padding: 10px 20px;
+        position: absolute;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+    }
+    .navbar img {
+        height: 50px;
+    }
+    .navbar a {
+        color: white;
+        text-decoration: none;
+        margin: 0 15px;
+        font-weight: 500;
+    }
+    .navbar a:hover {
+        text-decoration: underline;
+    }
+    .container {
+        display: flex;
+        gap: 12px;
+        max-width: 550px; /* Increased width */
+        width: 100%;
+        background: #5a70cd;
+        border-radius: 14px;
+        padding: 30px;
+        scroll-snap-type: x mandatory;
+        overflow-x: scroll;
+        scroll-padding: 30px;
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+        transform: translateX(-300px); /* Move the slider slightly to the left */
+        margin-top: 160px; /* Added margin to move the slider down */
+    }
+    .container .card {
+        display: flex;
+        flex: 0 0 100%;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px;
+        border-radius: 12px;
+        background: #fff;
+        scroll-snap-align: start;
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+    }
+    .card .image {
+        height: 150px;
+        width: 150px;
+        padding: 4px;
+        background: #5a70cd;
+        border-radius: 50%;
+    }
+    .image img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 5px solid #fff;
+    }
+    .card h2 {
+        margin-top: 25px;
+        color: #333;
+        font-size: 22px;
+        font-weight: 600;
+    }
+    .card p {
+        margin-top: 4px;
+        font-size: 18px;
+        font-weight: 400;
+        color: #333;
+        text-align: center;
+    }
+    .footer {
+        background-color: rgb(90,112,205);
+        color: white;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        text-align: center;
+        padding: 20px;
+        width: 100%;
+        position: relative;
+        bottom: 0;
+        margin-top: auto; /* Ensures footer stays at the bottom */
+    }
 
-        }
-        .about{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-
-        }
-        .image{
-            flex:1;
-            margin-right: 40px;
-            overflow: hidden;
-
-        }
-        .image img{
-            max-width: 100%;
-            height: auto;
-            display: block;
-            transition: 0.5s ease;
-        }
-        .about-image:hover img{
-            transform: scale(1.2);
-        }
-        .content{
-           flex: 1; 
-        }
-        .content h1{
-            font-size: 40px;
-            margin-bottom: 15px;
-            color: white;
-        }
-        .content p{
-            font-size: 18px;
-            line-height: 1.5;
-            color: rgba(255, 255, 255, 0.708);
-
-        }
-        .content .Our-courses{
-            display: inline-block;
-            padding: 12px;
-            background-color: #39a1ff;
-            color:#fff;
-            font-size: 18px;
-            text-decoration: none;
-            border-radius: 10px;
-            margin-top: 15px;
-            transition: 0.3 ease;
-
-        }
-        .content .Our-courses:hover{
-            background-color: gray;
-
-
-        }
-        @media screen and(max-width:768px){
-            .heading{
-                padding: 0px 20px;
-            }
-            .heading h1{
-                font-size: 36px;
-            }
-            .container{
-                padding: 0px;
-
-            }
-            .about{
-                padding: 20px;
-                flex-direction: column;
-            }
-            .image{
-                margin-right:0px ;
-                margin-bottom: 20px;
-            }
-            .content p{
-                padding: 0px;
-                font-size: 16px; 
-            }
-            .content .Our-courses{
-                font-size: 16px;
-            }
-        }
-        .slider-container {
-            position: relative;
-            overflow: hidden; 
-            width: 100%;
-        }
-
-        .card-wrapper {
-            display: flex; 
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .card-list .card-item .card-link{
-            width: 400px;
-            display: block;
-            background: #fff;
-            padding: 18px;
-            border-radius: 12px;
-            text-decoration: none;
-            border: 2px solid transparent;
-            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.05);
-        }
-        .card-list .card-item .card-link:hover{
-            border-color:  #09f;
-
-        }
-        .card-list .card-link .card-image{
-            width: 200px;
-            height: auto;
-            aspect-ratio: 16 / 9;
-            object-fit: contain;
-            border-radius: 10px;
-        }
-
-        .card-list .card-link .badge{
-            color:white ;
-            padding: 8px 16px;
-            font-size: 17px ;
-            font-weight: 500 ;
-            margin: 16px 0 18px;
-            background: #39a3ffa8;
-            width: fit-content;
-            border-radius: 50px;
-        }
-
-        .card-title{
-            font-size: 19px;
-            color:rgba(81,74,157,1) 55%;
-            font-weight: 600;
-        }
-      
-        /* Slider Navigation */
-        .nav-btn {
-            position: absolute;
-            top: 50%;
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            padding: 15px;
-            cursor: pointer;
-            z-index: 10;
-            border-radius: 50%;
-        }
-
-        .prev {
-            left: 10px;
-            transform: translateY(-50%);
-        }
-
-        .next {
-            right: 10px;
-            transform: translateY(-50%);
-        }
-
-        footer {
-            background-color: rgb(90,112,205);
-            color: white;
-            text-align: center;
-            padding: 10px;
-            position: relative;
-            width: 100%;
-            bottom: 0;
-        }
-
-        footer p {
-            margin: 0;
-            font-size: 1em;
-        }
+    .footer a {
+        color: black;
+        text-decoration: none;
+        margin: 0 10px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    .about {
+        margin-top: 20px; /* Space between the slider and the paragraph */
+        text-align: center;
+        color: #333;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 32px;
+        color: white;
+        max-width: 550px; /* Same width as the slider */
+        position: absolute; /* Positioning it to the right */
+        right: 50px; /* Adjust as needed */
+        font-weight: bold; /* Changed to bold */
+    }
     </style>
 </head>
 <body>
     <div class="navbar">
-        <img src="ConnectLine.png" alt="ConnectLine" style="width: auto; height: 50px; float: left;"> 
-        <a href="Home.php">Courses</a>
-        <a href="#">Chat</a>
-        <a href="My Account.html">My Account</a>
-        <a href="AboutUs.html">About Us</a>
-        <a href="Login.html">Sign Out</a>
-    </div>
-    <div class="heading">
-        <h1>About Us</h1>
-    </div>
-    
-    <div class="container">
-        <section class="about">
-            <div class="image">
-                <img src="AboutUs.webp" alt="" srcset="">
-            </div>
-
-            <div class="content">
-                <h1>GROUP CHAT THAT'S ALL FUN & GAMES</h1>
-                <br>
-                <p>
-                    Connect Line is your go-to platform for discovering and accessing all the courses available at your college.
-                     It’s designed to help you find all the information you need to plan your academic journey with ease. You can also create study groups and connect with friends to make learning more interactive and fun. Whether you’re tackling assignments together or preparing for exams, Connect Line makes studying easier, collaborative, and more enjoyable!"
-
-                </p>
-                <a href="Home.html" class="Our-courses">Our courses</a>
-            </div>
-        </section>
-    </div>
-    <div class="slider-container">
-        <div class="card-wrapper">
-            <ul class="card-list">
-                <li class="card-item">
-                    <a href="#" class="card-link">
-                        <img src="Student 2.png" alt="Card Image" class="card-image">
-                        <p class="badge">Anna</p>
-                        <h2 class="card-title">Review</h2>
-                        
-                    </a>
-                </li>
-                <li class="card-item">
-                    <a href="#" class="card-link">
-                        <img src="Student.png" alt="Card Image" class="card-image">
-                        <p class="badge">Aaron</p>
-                        <h2 class="card-title">Review</h2>
-                        
-                    </a>
-                </li>
-                <li class="card-item">
-                    <a href="#" class="card-link">
-                        <img src="Student 3.png" alt="Card Image" class="card-image">
-                        <p class="badge">Lily</p>
-                        <h2 class="card-title">Review</h2>
-                        
-                    </a>
-                </li>
-                <li class="card-item">
-                    <a href="#" class="card-link">
-                        <img src="Student 2.png" alt="Card Image" class="card-image">
-                        <p class="badge">Olivia</p>
-                        <h2 class="card-title">Review</h2>
-                        
-                    </a>
-                </li>
-                <li class="card-item">
-                    <a href="#" class="card-link">
-                        <img src="Student 4.png" alt="Card Image" class="card-image">
-                        <p class="badge">John</p>
-                        <h2 class="card-title">Review</h2>
-                        
-                    </a>
-                </li>
-            </ul>
+        <img src="ConnectLine.png" alt="ConnectLine"> 
+        <div>
+            <a href="Home.php">Courses</a>
+            <a href="Chat.php">Chat</a>
+            <a href="MyAccount.php">My Account</a>
+            <a href="Login.php">Sign Out</a>
         </div>
-        <button class="arrow arrow-left" onclick="moveSlide(-1)">&#10094;</button>
-        <button class="arrow arrow-right" onclick="moveSlide(1)">&#10095;</button>
     </div>
-
-    <script>
-
-    let currentIndex = 0;
-    
-    function moveSlide(direction) {
-        const slides = document.querySelector('.card-wrapper');
-        const totalSlides = document.querySelectorAll('.card-item').length;
-    
-        currentIndex += direction;
-    
-        if (currentIndex < 0) {
-            currentIndex = totalSlides - 1; 
-        } else if (currentIndex >= totalSlides) {
-            currentIndex = 0; 
-        }
-    
-        const offset = -currentIndex * (400 + 15); 
-        slides.style.transform = `translateX(${offset}px)`;
-}
-
-    </script>
-
-<footer>
-    <p>&copy; 2024 ConnectLine. All rights reserved.</p>
-</footer>
+    <section class="container">
+    <div class="card">
+        <div class="image">
+        <img src="Student 2.png" alt="" />
+        </div>
+        <h2>Emri Mbiemri</h2>
+        <p>"... Review ..."</p>
+    </div>
+    <div class="card">
+        <div class="image">
+        <img src="Student.png" alt="" />
+        </div>
+        <h2>Emri Mbiemri</h2>
+        <p>"... Review ..."</p>
+    </div>
+    <div class="card">
+        <div class="image">
+        <img src="Student 2.png" alt="" />
+        </div>
+        <h2>Emri Mbiemri</h2>
+        <p>"... Review ..."</p>
+    </div>
+    <div class="card">
+        <div class="image">
+        <img src="Student 3.png" alt="" />
+        </div>
+        <h2>Emri Mbiemri</h2>
+        <p>"... Review ..."</p>
+    </div>
+    </section>
+    <div class="about">
+        <p>ABOUT US</p> <br>
+        <p>We are dedicated to providing the best learning experience for our students.</p> <br> <br>
+    </div>
+    <div class="footer">
+        <p>&copy; 2024 Connect Line. All rights reserved.</p>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+    </div>
 </body>
 </html>
