@@ -202,6 +202,7 @@ $subjects = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <a href="Home.php">Courses</a>
     <a href="Chat.php">Chat</a>
     <a href="MyAccount.php">My Account</a>
+    <a href="AboutUs.php">About Us</a>
     <a href="Login.php">Sign Out</a>
 </div>
 
