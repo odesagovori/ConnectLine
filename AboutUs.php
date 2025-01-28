@@ -242,7 +242,7 @@
 <body>
     <div class="navbar">
         <img src="ConnectLine.png" alt="ConnectLine" style="width: auto; height: 50px; float: left;"> 
-        <a href="Home.html">Courses</a>
+        <a href="Home.php">Courses</a>
         <a href="#">Chat</a>
         <a href="My Account.html">My Account</a>
         <a href="AboutUs.html">About Us</a>
