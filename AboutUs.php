@@ -260,9 +260,9 @@
     <div class="navbar">
         <img src="ConnectLine.png" alt="ConnectLine" style="width: auto; height: 50px; float: left;">
         <a href="Home.php">Courses</a>
-        <a href="#">Chat</a>
+        <a href="Chat.php">Chat</a>
         <a href="MyAccount.php">My Account</a>
-        <a href="#">About Us</a>
+        <a href="AboutUs.php">About Us</a>
         <a href="Login.php">Sign Out</a>
     </div>
 
@@ -273,7 +273,7 @@
     <div class="container-1">
         <section class="about">
             <div class="image-1">
-                <img src="study-server.avif" alt="" srcset="">
+                <img src="Welcome.png" alt="" srcset="">
             </div>
 
             <div class="content">
@@ -282,7 +282,7 @@
                 <p>
                 We are dedicated to providing the best learning experience for our students.
                 </p>
-                <a href="Home.html" class="Our-courses">Our courses</a>
+                <a href="Home.php" class="Our-courses">Our courses</a>
             </div>
         </section>
     </div>
@@ -297,33 +297,29 @@
         <div class="image">
             <img src="Student 2.png" alt="" />
         </div>
-        <h2>Anna</h2>
-        <p>"It’s easy to connect with others, learn new things, and have fun all in one place.
-            Highly recommend it for anyone looking to join a community that combines learning with a great user experience!"</p>
+        <h2>Student 1</h2>
+        <p>"Reviews"</p>
     </div>
     <div class="card">
         <div class="image">
             <img src="Student.png" alt="" />
         </div>
-        <h2>Aaron</h2>
-        <p>"The courses offered on ConnectLine are incredibly useful and well-structured.
-            I’ve learned so much in a short period of time, and the material is always relevant and practical." </p>
+        <h2>Student 2</h2>
+        <p>"Reviews"</p>
     </div>
     <div class="card">
         <div class="image">
             <img src="Student 2.png" alt="" />
         </div>
-        <h2>Olivia</h2>
-        <p>"I've had an amazing experience using ConnectLine.
-            The platform is user-friendly, and I love the variety of tools it offers for learning and connecting with others."</p>
+        <h2>Student 3</h2>
+        <p>"Reviews"</p>
     </div>
     <div class="card">
         <div class="image">
             <img src="Student 3.png" alt="" />
         </div>
-        <h2>Lily</h2>
-        <p>"It's a great platform for staying organized and motivated while learning.
-             It offers all the courses we need to stay ahead in our studies."</p>
+        <h2>Student 4</h2>
+        <p>"Reviews"</p>
     </div>
 </section>
 </div>
