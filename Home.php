@@ -1,7 +1,7 @@
 <?php
 session_start();
 $hide = "hide";
-if (!isset($_SESSION['email'])) {
+if (!isset($_SESSION['username'])) {
     header("Location: Login.php");
 } else {
     if ($_SESSION['role'] == "admin") {
