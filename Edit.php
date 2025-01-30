@@ -15,8 +15,9 @@ if (isset($_POST['editBtn'])) {
     $email = $_POST['email'];
     $username = $_POST['username'];
     $password = $_POST['password'];
+    $role = $_POST['role'];
 
-    $userRepository->updateUser($id, $name, $lastname, $email, $username, $password);
+    $userRepository->updateUser($id, $name, $lastname, $email, $username, $password, $role);
 
     header("Location: Dashboard.php");
 }
@@ -124,6 +125,8 @@ if (isset($_POST['editBtn'])) {
         <input type="text" name="username" value="<?=$user['username']?>"> <br> <br>
         
         <input type="password" name="password" placeholder="Enter new password"> <br> <br>
+
+        <input type="text" name="role" value="<?=$user['role']?>"> <br> <br>
 
         <input type="submit" name="editBtn" value="Save Changes"> <br> <br>
     </form>
