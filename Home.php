@@ -1,11 +1,17 @@
 <?php
-ob_start();
 session_start();
-if (!isset($_SESSION['user_id']) || !isset($_SESSION['role'])) {
-    header("Location: Login.php"); // Redirect to login if not authenticated
-    exit;
-}
+$hide = "hide";
+if (!isset($_SESSION['email'])) {
+    header("Location: Login.php");
+} else {
+    if ($_SESSION['role'] == "admin") {
+        $hide = ""; // Show Dashboard for admin
+    } else {
+        $hide = "hide"; // Ensure non-admin users have the Dashboard link hidden
+    }
+?>
 
+<?php
 require_once 'Database.php'; // Include the Database class
 
 $db = new Database();
@@ -24,9 +30,11 @@ $subjects = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-</head>
-<body>
     <style>
+        .hide {
+            display: none;
+        }
+
         body {
             margin: 0;
         }
@@ -195,61 +203,67 @@ $subjects = $stmt->fetchAll(PDO::FETCH_ASSOC);
             margin-bottom: 10px;
         }
     </style>
-
+</head>
+<body>
     <!--Navigation bar:-->
-<div class="navbar">
-    <img src="ConnectLine.png" alt="ConnectLine" style="width: auto; height: 50px; float: left;"> 
-    <a href="Home.php">Courses</a>
-    <a href="Chat.php">Chat</a>
-    <a href="MyAccount.php">My Account</a>
-    <a href="AboutUs.php">About Us</a>
-    <a href="Login.php">Sign Out</a>
-</div>
+    <div class="navbar">
+        <img src="ConnectLine.png" alt="ConnectLine" style="width: auto; height: 50px; float: left;"> 
+        <a href="Home.php">Courses</a>
+        <a href="Chat.php">Chat</a>
+        <a href="MyAccount.php">My Account</a>
+        <a href="AboutUs.php">About Us</a>
+        <a href="Dashboard.php" class="<?=$hide?>">Dashboard</a>
+        <?php echo $_SESSION['email']; ?>
+        <a href="Login.php">Sign Out</a>
+    </div>
 
-<!--Courses Heading:-->
-<h1 class="courses-heading">Courses</h1>
+    <!--Courses Heading:-->
+    <h1 class="courses-heading">Courses</h1>
 
-<!--Search box:-->
-<div class="search-container">
-    <input type="text" placeholder="Search course..." class="search-bar" id="courseSearch" oninput="filterCourses()">
-</div>
+    <!--Search box:-->
+    <div class="search-container">
+        <input type="text" placeholder="Search course..." class="search-bar" id="courseSearch" oninput="filterCourses()">
+    </div>
 
-<!--Courses:-->
-<div class="box-container" id="courseContainer">
-    <?php foreach ($subjects as $subject): ?>
-        <div class="card" data-title="<?= htmlspecialchars($subject['title']) ?>">
-            <img src="<?= htmlspecialchars($subject['image']) ?>" alt="<?= htmlspecialchars($subject['title']) ?>" style="width: 100%;">
-            <p style="color: rgb(90,112,205); text-align: center; font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 18px;"><?= htmlspecialchars($subject['title']) ?></p>
-            <button class="register-button" onclick="window.location.href='Chat.php'">Go to Chat</button>
-        </div>
-    <?php endforeach; ?>
-</div>
+    <!--Courses:-->
+    <div class="box-container" id="courseContainer">
+        <?php foreach ($subjects as $subject): ?>
+            <div class="card" data-title="<?= htmlspecialchars($subject['title']) ?>">
+                <img src="<?= htmlspecialchars($subject['image']) ?>" alt="<?= htmlspecialchars($subject['title']) ?>" style="width: 100%;">
+                <p style="color: rgb(90,112,205); text-align: center; font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 18px;"><?= htmlspecialchars($subject['title']) ?></p>
+                <button class="register-button" onclick="window.location.href='Chat.php'">Go to Chat</button>
+            </div>
+        <?php endforeach; ?>
+    </div>
 
-<script>
-    function filterCourses() {
-        const searchInput = document.getElementById('courseSearch').value.toLowerCase();
-        const courses = document.querySelectorAll('.card');
-        courses.forEach(course => {
-            const title = course.getAttribute('data-title');
-            if (title.includes(searchInput)) {
-                course.style.display = 'block';
-            } else {
-                course.style.display = 'none';
-            }
-        });
-    }
-</script>
+    <script>
+        function filterCourses() {
+            const searchInput = document.getElementById('courseSearch').value.toLowerCase();
+            const courses = document.querySelectorAll('.card');
+            courses.forEach(course => {
+                const title = course.getAttribute('data-title');
+                if (title.includes(searchInput)) {
+                    course.style.display = 'block';
+                } else {
+                    course.style.display = 'none';
+                }
+            });
+        }
+    </script>
 
-<!--Background:-->
-<div class="bg"></div>
-<div class="bg bg2"></div>
-<div class="bg bg3"></div>
+    <!--Background:-->
+    <div class="bg"></div>
+    <div class="bg bg2"></div>
+    <div class="bg bg3"></div>
 
-<!--Footer:-->
-<div class="footer">
-    <p>&copy; 2024 Connect Line. All rights reserved.</p>
-    <a href="#">Privacy Policy</a>
-    <a href="#">Terms of Service</a>
-</div>
+    <!--Footer:-->
+    <div class="footer">
+        <p>&copy; 2024 Connect Line. All rights reserved.</p>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+    </div>
 </body>
 </html>
+<?php
+}
+?>
