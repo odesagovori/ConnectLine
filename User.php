@@ -1,7 +1,7 @@
 <?php
 class User {
     private $conn;
-    private $table_name = 'userRoles';
+    private $table_name = 'users';
 
     public function __construct($db) {
         $this->conn = $db;
@@ -28,16 +28,13 @@ class User {
 
     public function login($email, $password) {
         $query = "SELECT id, name, lastname, email, password, role FROM {$this->table_name} WHERE email = :email";
-
         $stmt = $this->conn->prepare($query);
         $stmt->bindParam(':email', $email);
         $stmt->execute();
-
-        // Check if a record exists
+    
         if ($stmt->rowCount() > 0) {
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
             if (password_verify($password, $row['password'])) {
-                // Start the session and store user data
                 session_start();
                 $_SESSION['user_id'] = $row['id'];
                 $_SESSION['email'] = $row['email'];
@@ -46,10 +43,6 @@ class User {
             }
         }
         return false;
-    }
-
-    public function isAdmin() {
-        return isset($_SESSION['role']) && $_SESSION['role'] == 1; // Assuming 1 is the role for admin
     }
 }
 ?>
