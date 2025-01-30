@@ -168,7 +168,6 @@ ob_start();
 <?php
 include_once 'Database.php';
 include_once 'User.php';
-include_once 'UserRepository.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $db = new Database();
@@ -181,9 +180,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = $_POST['email'];
     $username = $_POST['username'];
     $password = $_POST['password'];
+    $role = 0; // Default role for new users
 
     // Register the user
-    if ($user->register($name, $lastname, $email, $username, $password)) {
+    if ($user->register($name, $lastname, $email, $username, $password, $role)) {
         header("Location: Login.php"); // Redirect to login page
         exit;
     } else {
