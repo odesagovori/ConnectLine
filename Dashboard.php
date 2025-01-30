@@ -1,7 +1,7 @@
 <?php 
 session_start();
 
-if (!isset($_SESSION['email'])) {
+if (!isset($_SESSION['username'])) {
     header("Location: Login.php");
 } else {
     if ($_SESSION['role'] == "user") {
