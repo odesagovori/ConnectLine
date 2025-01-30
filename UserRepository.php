@@ -1,8 +1,6 @@
 <?php
-
 include_once 'Database.php';
 include_once 'User.php';
-include_once 'UserRepository.php';
 
 class UserRepository {
     private $connection; 
@@ -12,20 +10,21 @@ class UserRepository {
         $this->connection = $conn->getConnection(); 
     }
 
-    function insertUser($user) {
+    function insertUser($userRoles) {
         $conn = $this->connection;
 
-        $name = $user->getName();
-        $lastname = $user->getLastname();
-        $email = $user->getEmail();
-        $username = $user->getUsername();
-        $password = $user->getPassword();
+        $name = $userRoles->getName();
+        $lastname = $userRoles->getLastname();
+        $email = $userRoles->getEmail();
+        $username = $userRoles->getUsername();
+        $password = $userRoles->getPassword();
+        $role = $userRoles->getRole();
 
-        $sql = "INSERT INTO user (name, lastname, email, username, password) VALUES (?,?,?,?,?)";
+        $sql = "INSERT INTO users (name, lastname, email, username, password, role) VALUES (?,?,?,?,?,?)";
 
         $statement = $conn->prepare($sql); 
 
-        $statement->execute([$name, $lastname, $email, $username, password_hash($password, PASSWORD_DEFAULT)]);
+        $statement->execute([$name, $lastname, $email, $username, password_hash($password, PASSWORD_DEFAULT), $role]);
 
         echo "<script> alert('User has been inserted successfully!'); </script>";
     }
@@ -33,33 +32,46 @@ class UserRepository {
     function getAllUsers() {
         $conn = $this->connection;
 
-        $sql = "SELECT * FROM user";
+        $sql = "SELECT * FROM users";
 
         $statement = $conn->query($sql); 
-        $users = $statement->fetchAll(); 
+        $userRoles = $statement->fetchAll(); 
 
-        return $users; 
+        return $userRoles; 
     }
 
     function getUserById($id) {
         $conn = $this->connection;
 
-        $sql = "SELECT * FROM user WHERE id='$id'";
+        $sql = "SELECT * FROM users WHERE id=?";
 
-        $statement = $conn->query($sql); 
-        $user = $statement->fetch(); 
+        $statement = $conn->prepare($sql); 
+        $statement->execute([$id]);
+        $userRoles = $statement->fetch(); 
 
-        return $user;
+        return $userRoles;
     }
 
-    function updateUser($id, $name, $lastname, $email, $username, $password) {
+    function getUserByRole($role) {
         $conn = $this->connection;
 
-        $sql = "UPDATE user SET name=?, lastname=?, email=?, username=?, password=? WHERE id=?";
+        $sql = "SELECT * FROM users WHERE role=?";
+
+        $statement = $conn->prepare($sql); 
+        $statement->execute([$role]);
+        $userRoles = $statement->fetchAll(); 
+
+        return $userRoles;
+    }
+
+    function updateUser($id, $name, $lastname, $email, $username, $password, $role) {
+        $conn = $this->connection;
+
+        $sql = "UPDATE users SET name=?, lastname=?, email=?, username=?, password=?, role=? WHERE id=?";
 
         $statement = $conn->prepare($sql); 
 
-        $statement->execute([$name, $lastname, $email, $username, password_hash($password, PASSWORD_DEFAULT), $id]);
+        $statement->execute([$name, $lastname, $email, $username, password_hash($password, PASSWORD_DEFAULT), $role, $id]);
 
         echo "<script>alert('Update was successful');</script>";
     }
@@ -67,7 +79,7 @@ class UserRepository {
     function deleteUser($id) {
         $conn = $this->connection;
 
-        $sql = "DELETE FROM user WHERE id=?";
+        $sql = "DELETE FROM users WHERE id=?";
 
         $statement = $conn->prepare($sql); 
 
@@ -76,3 +88,4 @@ class UserRepository {
         echo "<script>alert('Delete was successful');</script>";
     }
 }
+?>
