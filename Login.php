@@ -1,5 +1,9 @@
 <?php
-ob_start();
+session_start();
+
+if (isset($_SESSION['email'])) {
+    header("Location: Home.php");
+} else {
 ?>
 
 <!DOCTYPE html>
@@ -109,8 +113,8 @@ ob_start();
             <div class="login-text">
                 <h3>Login</h3>
             </div>
-        <form action="Login.php" method="POST">
-            <input type="text" id="userid" name="email" placeholder="Username" size="15" style="width: 200px">
+        <form action="Home.php" method="POST">
+            <input type="text" id="userid" name="email" placeholder="Email" size="15" style="width: 200px">
             <br> <br>
             <input type="password" id="pass" name="password" placeholder="Password" style="width: 200px">
             <br> <br>
@@ -144,46 +148,6 @@ ob_start();
     </script>
 </body>
 </html>
-
-<?php
-session_start();
-include_once 'Database.php';
-include_once 'User.php';
-include_once 'UserRepository.php'; // Include UserRepository
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $db = new Database();
-    $connection = $db->getConnection();
-    $user = new User($connection);
-    $userRepo = new UserRepository(); // Create UserRepository instance
-
-    // Get form data
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-
-    // Attempt to log in
-    if ($user->login($email, $password)) {
-        // Fetch user role directly from the database using user ID stored in session
-        $userRoles = $userRepo->getUserById($_SESSION['user_id']); // Correct method to get user by ID
-    
-        // Check if userRoles is not empty and contains the 'role' key
-        if (!empty($userRoles) && isset($userRoles['role'])) {
-            // Determine redirection based on user role
-            switch ($userRoles['role']) {
-                case "admin":
-                    header("Location: Home.php");
-                    exit;
-                case "user":
-                    header("Location: C_Home.php");
-                    exit;
-                default:
-                    echo "User role not recognized.";
-            }
-        } else {
-            echo "User role not found.";
-        }
-    } else {
-        echo "Login failed. Please check your credentials.";
-    }
+<?php 
 }
 ?>
