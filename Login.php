@@ -1,9 +1,31 @@
 <?php
 session_start();
 
-if (isset($_SESSION['email'])) {
-    header("Location: Home.php");
-} else {
+// Include database and user files
+include_once 'Database.php';
+include_once 'User.php';
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // Get the form data
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    // Create a new User object and try to log in
+    $db = new Database();
+    $connection = $db->getConnection();
+    $user = new User($connection);
+
+    // If the user exists and password is correct
+    if ($user->login($email, $password)) {
+        // If login is successful, start the session and redirect to Home.php
+        $_SESSION['email'] = $email;
+        header("Location: Home.php");
+        exit;
+    } else {
+        // If login fails, show an error message
+        $error_message = "Invalid email or password.";
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -104,6 +126,7 @@ if (isset($_SESSION['email'])) {
             text-align: center;
             font-family: 'Arial';
         }
+
     </style>
 </head>
 <body>
@@ -113,18 +136,26 @@ if (isset($_SESSION['email'])) {
             <div class="login-text">
                 <h3>Login</h3>
             </div>
-        <form action="Home.php" method="POST">
-            <input type="text" id="userid" name="email" placeholder="Email" size="15" style="width: 200px">
-            <br> <br>
-            <input type="password" id="pass" name="password" placeholder="Password" style="width: 200px">
-            <br> <br>
-            <button id="submit-btn">Login</button>
-        </form>
+            <!-- Login Form -->
+            <form action="Login.php" method="POST">
+                <input type="text" id="userid" name="email" placeholder="Email" size="15" style="width: 200px" required>
+                <br> <br>
+                <input type="password" id="pass" name="password" placeholder="Password" style="width: 200px" required>
+                <br> <br>
+                <button type="submit" id="submit-btn">Login</button>
+            </form>
             <br> <br>
             <a href="Register.php" style="text-decoration: none; font-family: Arial, Helvetica, sans-serif; font-size: 13px;">Don't have an account? Create one here.</a>
+            
+            <?php
+            // If there's an error message, display it
+            if (isset($error_message)) {
+                echo "<p style='color: red;'>$error_message</p>";
+            }
+            ?>
         </div>
     </div>
-    
+
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const BtnSubmit = document.getElementById('submit-btn');
@@ -146,8 +177,6 @@ if (isset($_SESSION['email'])) {
             }
         });
     </script>
+
 </body>
 </html>
-<?php 
-}
-?>
