@@ -17,7 +17,7 @@ session_start();
         }
 
         body {
-            background: linear-gradient(90deg, rgba(36, 198, 220, 1) 0%, rgba(81, 74, 157, 1) 55%);
+            background: linear-gradient(90deg, rgba(36, 199, 220, 0.86) 0%, rgba(81, 74, 157, 0.86) 55%);
         }
 
         .navbar {
@@ -120,7 +120,7 @@ session_start();
             padding: 12px;
             background-color: #39a1ff;
             color: #fff;
-            font-size: 18px;
+            font-size: 16px;
             text-decoration: none;
             border-radius: 10px;
             margin-top: 15px;
@@ -269,7 +269,7 @@ session_start();
             width: 90%; /* Adjusted width */
             max-width: 550px; /* Set max width to match slider */
             margin: 20px auto;
-            background: rgba(255, 255, 255, 0.8);
+            background: white;
             padding: 20px;
             border-radius: 30px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -315,7 +315,7 @@ session_start();
 <body>
 
     <div class="navbar">
-        <img src="ConnectLine.png" alt="ConnectLine" style="width: auto; height: 50px; float: left;">
+        <img src="Images/ConnectLine.png" alt="ConnectLine" style="width: auto; height: 50px; float: left;">
         <a href="Home.php">Courses</a>
         <a href="Chat.php">Chat</a>
         <a href="MyAccount.php">My Account</a>
@@ -330,7 +330,7 @@ session_start();
     <div class="container-1">
         <section class="about">
             <div class="image-1">
-                <img src="Welcome.png" alt="" srcset="">
+                <img src="Images/Welcome1.png" alt="" srcset="">
             </div>
 
             <div class="content">
@@ -380,6 +380,7 @@ session_start();
 
     <div class="review-form">
         <h2>Leave a Review</h2>
+        <br>
         <form method="POST" action="">
             <textarea name="review" rows="4" cols="50" placeholder="Write your review here..." required></textarea><br>
             <input type="email" name="email" placeholder="Your Email" required><br>
@@ -388,7 +389,7 @@ session_start();
     </div>
     <br><br>
     <footer>
-        <p>&copy; 2023 Your Company. All rights reserved.</p>
+        <p>&copy; 2024 Connect Line. All rights reserved</p>
     </footer>
 
     <?php
