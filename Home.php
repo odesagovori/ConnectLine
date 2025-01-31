@@ -1,4 +1,4 @@
-<?php
+<?php    
 session_start();
 $hide = "hide";
 if (!isset($_SESSION['email'])) {
@@ -175,7 +175,7 @@ $subjects = $stmt->fetchAll(PDO::FETCH_ASSOC);
             color: white;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             text-align: center;
-            padding: 20px;
+            padding: 5px;
             position: relative;
             bottom: 0;
             width: 100%;
@@ -261,12 +261,9 @@ $subjects = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <!--Footer:-->
     <div class="footer">
         <p>&copy; 2024 Connect Line. All rights reserved.</p>
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
     </div>
 </body>
 </html>
 <?php
 }
 ?>
-

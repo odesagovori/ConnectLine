@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,11 +12,12 @@
 </head>
 <body>
     <div style="position: relative;">
-     <img src="Welcome.png" style="position: absolute; left: 800px; top: 180px; width: 40%;">
+     <img src="Images/Welcome.png" style="position: absolute; left: 800px; top: 180px; width: 40%;">
     </div> <!---->
     <style>
         body {
-            background: linear-gradient(-45deg, rgba(36, 198, 220, 1), rgba(81, 74, 157, 1), rgb(90, 112, 205), rgba(36,198,220,1));
+            background-color: #e3f2fd;
+            background: linear-gradient(-45deg, #fbf9fa, #a5cffc, #ddeeff, rgb(90,112,205));
             background-size: 400% 400%;
             animation: gradient 15s ease infinite;
             height: 100vh;
@@ -51,17 +56,17 @@
     </style>
 
     <div class="navbar">
-        <a href="Login.html">LOGIN</a>
-        <a href="Register.html">REGISTER</a>
-        <a href="#">SUPPORT</a>
+        <a href="Login.php">LOGIN</a>
+        <a href="Register.php">REGISTER</a>
+        <a href="AboutUs.php">ABOUT US</a>
     </div>
      
     <div style="position: relative;">
-        <img src="ConnectLine.png" alt="ConnectLine" style="position: absolute; left: 70px; top: -40px; width: 10%;"> 
+        <img src="Images/ConnectLine.png" alt="ConnectLine" style="position: absolute; left: 70px; top: -40px; width: 10%;"> 
     </div>
 
     <div style="position: relative;">
-        <img src="Slogan.png" style="position: absolute; left: 60px; top: 150px; width: 40%;">
+        <img src="Images/Slogan.png" style="position: absolute; left: 60px; top: 150px; width: 40%;">
     </div>
 
     <div class="d-flex flex-column justify-content-center w-100 h-100"></div>

@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -66,8 +70,8 @@
 </head>
 <body>
     <div class="navbar">
-        <a href="Home.html">Home</a>
-        <a href="My Account.html">My Account</a>
+        <a href="Home.php">Home</a>
+        <a href="MyAccount.php">My Account</a>
         <a href="Logout.php">Sign Out</a>
     </div>
 

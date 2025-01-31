@@ -1,5 +1,5 @@
 <?php
-ob_start();
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -57,8 +57,7 @@ ob_start();
         }
 
         .login-box input[type="text"]::placeholder,
-        .login-box input[type="password"]::placeholder,
-        .login-box input[type="email"]::placeholder{
+        .login-box input[type="password"]::placeholder {
             color: gray;
             font-size: 15px;
             text-align: left;
@@ -66,12 +65,6 @@ ob_start();
         }
         .login-box input[type="text"],
         .login-box input[type="password"] {
-            width: 85%;
-            padding: 10px;
-            border-radius: 10px;
-            border-color: #39a1ff;
-        }
-        .login-box input[type="email"] {
             width: 85%;
             padding: 10px;
             border-radius: 10px;
@@ -102,7 +95,7 @@ ob_start();
 
     <div class="login-container">
         <div class="login-box">
-            <img src="Images/LoginLogo.png" alt="Login Icon" class="center" style="width: 40%">
+            <img src="LoginLogo.png" alt="Login Icon" class="center" style="width: 40%">
             <div class="register-text">
                 <h3>Register</h3>
             </div>
