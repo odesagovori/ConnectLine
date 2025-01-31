@@ -87,5 +87,13 @@ class UserRepository {
 
         echo "<script>alert('Delete was successful');</script>";
     }
+
+    function insertReview($email, $review) {
+        $conn = $this->connection;
+
+        $sql = "INSERT INTO reviews (email, review) VALUES (?, ?)";
+        $statement = $conn->prepare($sql);
+        $statement->execute([$email, $review]);
+    }
 }
 ?>
