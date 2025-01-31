@@ -26,6 +26,9 @@ session_start();
             text-decoration: none;
             font-size: 18px;
         }
+        .navbar a:hover {
+            text-decoration: underline;
+        }
         .chat-container {
             width: 80%;
             margin: 20px auto;
