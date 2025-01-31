@@ -1,7 +1,7 @@
 <?php
 session_start();
 $hide = "hide";
-if (!isset($_SESSION['username'])) {
+if (!isset($_SESSION['email'])) {
     header("Location: Login.php");
 } else {
     if ($_SESSION['role'] == "admin") {
@@ -207,14 +207,16 @@ $subjects = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <body>
     <!--Navigation bar:-->
     <div class="navbar">
-        <img src="ConnectLine.png" alt="ConnectLine" style="width: auto; height: 50px; float: left;"> 
+        <img src="Images/ConnectLine.png" alt="ConnectLine" style="width: auto; height: 50px; float: left;"> 
         <a href="Home.php">Courses</a>
         <a href="Chat.php">Chat</a>
         <a href="MyAccount.php">My Account</a>
         <a href="AboutUs.php">About Us</a>
         <a href="Dashboard.php" class="<?=$hide?>">Dashboard</a>
-        <?php echo $_SESSION['email']; ?>
-        <a href="Login.php">Sign Out</a>
+        <?php
+        //echo $_SESSION['email'];
+        ?>
+        <a href="Logout.php">Sign Out</a>
     </div>
 
     <!--Courses Heading:-->
@@ -267,3 +269,4 @@ $subjects = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <?php
 }
 ?>
+
