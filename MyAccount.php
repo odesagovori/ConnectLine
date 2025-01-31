@@ -1,3 +1,25 @@
+<?php
+session_start();
+include_once 'Database.php';
+include_once 'UserRepository.php';
+include_once 'User.php';
+
+$db = new Database();
+$conn = $db->getConnection();
+
+$email = $_SESSION['email']; // Assuming user ID is stored in session
+$query = "SELECT name, lastname, email FROM users WHERE email = :email";
+$stmt = $conn->prepare($query);
+$stmt->bindParam(':email', $email);
+$stmt->execute();
+$user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+$queryCourses = "SELECT title FROM subjectNames";
+$stmtCourses = $conn->prepare($queryCourses);
+$stmtCourses->execute();
+$courses = $stmtCourses->fetchAll(PDO::FETCH_ASSOC);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -74,19 +96,6 @@
             margin: 5px 0;
         }
 
-        #profile button {
-            background-color: #09f;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            border-radius: 10px;
-            font-size: 17px;
-        }
-
-        #profile button:hover {
-            background-color: gray;
-        }
         /* Courses Section */
         #courses {
             background-color: white;
@@ -178,11 +187,10 @@
 <body>
     <header>
         <div class ="Account">
-            <img src="LoginPic.png" style="width: 20%" >
+            <img src="Images/LoginPic.png" style="width: 20%" >
         </div>
         <h1>My Account</h1>
         <nav class="navbar">
-            <a href="Dashboard.php">Dashboard</a>
             <a href="Home.php">Courses</a>
             <a href="Login.php">Logout</a>
         </nav>
@@ -190,20 +198,16 @@
     <main>
         <section id="profile">
             <h2>Profile Information</h2>
-            <p>Name:</p>
-            <p>Email:</p>
-            <p>Student ID:</p>
-            <button>Edit Profile</button>
+            <p>Name: <?php echo $user['name']; ?></p>
+            <p>Lastname: <?php echo $user['lastname']; ?></p>
+            <p>Email: <?php echo $user['email']; ?></p>
         </section>
         <section id="courses">
             <h2>My Courses</h2>
                 <ul>
-                    <li>Course 1: Shkenca Kompjuterike 2</li>
-                    <li>Course 2: Dizajni dhe Zhvillimi i Web-it</li>
-                    <li>Course 3: Strukturat e Bazës së të Dhënave</li>
-                    <li>Course 4: Rrjeta Kompjuterike dhe Komunikimi</li>
-                    <li>Course 5: Hyrje në Algoritme</li>
-                    <li>Course 6: Strukturat Diskrete 1</li>
+                    <?php foreach ($courses as $course): ?>
+                        <li><?php echo $course['title']; ?></li>
+                    <?php endforeach; ?>
                 </ul>
         </section>
         <section id="settings">
