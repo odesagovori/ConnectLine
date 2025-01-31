@@ -65,7 +65,7 @@
             margin-bottom: 35px;
         }
 
-        .container-1{
+        .container-1 {
             width: 90%;
             margin: 0 auto;
             padding: 10px 20px;
@@ -159,6 +159,7 @@
                 font-size: 16px;
             }
         }
+
         .container {
             display: flex;
             gap: 12px;
@@ -174,6 +175,7 @@
             margin: 0 auto; /* This centers the container horizontally */
             margin-top: 60px;
         }
+
         .container .card {
             display: flex;
             flex: 0 0 100%;
@@ -185,6 +187,7 @@
             scroll-snap-align: start;
             box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
         }
+
         .card .image {
             height: 150px;
             width: 150px;
@@ -199,7 +202,7 @@
             object-fit: cover;
             border-radius: 50%;
             border: 5px solid #fff;
-         }
+        }
 
         .card h2 {
             margin-top: 25px;
@@ -207,6 +210,7 @@
             font-size: 22px;
             font-weight: 600;
         }
+
         .card p {
             margin-top: 4px;
             font-size: 18px;
@@ -229,6 +233,7 @@
             margin: 0;
             font-size: 1em;
         }
+
         .reviews-heading {
             width: 90%;
             display: flex;
@@ -237,14 +242,15 @@
             flex-direction: column;
             text-align: center;
             margin: 20px auto;
-
         }
+
         .reviews-heading h1 {
             font-size: 40px;
             color: white;
             margin-top: 50px;
             position: relative;
         }
+
         .reviews-heading h1::after {
             content: "";
             position: absolute;
@@ -254,9 +260,56 @@
             margin: 0 auto;
             background-color: rgba(36, 198, 220, 1);
         }
+
+        .review-form {
+            width: 90%; /* Adjusted width */
+            max-width: 550px; /* Set max width to match slider */
+            margin: 20px auto;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .review-form h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .review-form textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+        }
+
+        .review-form input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+        }
+
+        .review-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #39a1ff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .review-form button:hover {
+            background-color: gray;
+        }
     </style>
 </head>
 <body>
+
     <div class="navbar">
         <img src="ConnectLine.png" alt="ConnectLine" style="width: auto; height: 50px; float: left;">
         <a href="Home.php">Courses</a>
@@ -277,11 +330,8 @@
             </div>
 
             <div class="content">
-                <h1>GROUP CHAT THAT'S ALL FUN & GAMES</h1>
-                <br>
-                <p>
-                We are dedicated to providing the best learning experience for our students.
-                </p>
+                <h1>GROUP CHAT THAT'S ALL FUN & GAMES</h1> <br>
+                <p> We are dedicated to providing the best learning experience for our students. </p>
                 <a href="Home.php" class="Our-courses">Our courses</a>
             </div>
         </section>
@@ -292,40 +342,61 @@
             <h1>Student Reviews</h1>
         </div>
 
-    <section class="container">
-    <div class="card">
-        <div class="image">
-            <img src="Student 2.png" alt="" />
-        </div>
-        <h2>Student 1</h2>
-        <p>"Reviews"</p>
+        <section class="container">
+            <div class="card">
+                <div class="image">
+                    <img src="Images/Student 2.png" alt="" />
+                </div>
+                <h2>Student 1</h2>
+                <p>"Reviews"</p>
+            </div>
+            <div class="card">
+                <div class="image">
+                    <img src="Images/Student.png" alt="" />
+                </div>
+                <h2>Student 2</h2>
+                <p>"Reviews"</p>
+            </div>
+            <div class="card">
+                <div class="image">
+                    <img src="Images/Student 2.png" alt="" />
+                </div>
+                <h2>Student 3</h2>
+                <p>"Reviews"</p>
+            </div>
+            <div class="card">
+                <div class="image">
+                    <img src="Images/Student 3.png" alt="" />
+                </div>
+                <h2>Student 4</h2>
+                <p>"Reviews"</p>
+            </div>
+        </section>
     </div>
-    <div class="card">
-        <div class="image">
-            <img src="Student.png" alt="" />
-        </div>
-        <h2>Student 2</h2>
-        <p>"Reviews"</p>
+
+    <div class="review-form">
+        <h2>Leave a Review</h2>
+        <form method="POST" action="">
+            <textarea name="review" rows="4" cols="50" placeholder="Write your review here..." required></textarea><br>
+            <input type="email" name="email" placeholder="Your Email" required><br>
+            <button type="submit" name="submit">Send</button>
+        </form>
     </div>
-    <div class="card">
-        <div class="image">
-            <img src="Student 2.png" alt="" />
-        </div>
-        <h2>Student 3</h2>
-        <p>"Reviews"</p>
-    </div>
-    <div class="card">
-        <div class="image">
-            <img src="Student 3.png" alt="" />
-        </div>
-        <h2>Student 4</h2>
-        <p>"Reviews"</p>
-    </div>
-</section>
-</div>
     <br><br>
     <footer>
-        <p>&copy; 2024 ConnectLine. All rights reserved.</p>
+        <p>&copy; 2023 Your Company. All rights reserved.</p>
     </footer>
+
+    <?php
+        include_once 'UserRepository.php';
+
+        if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
+            $email = $_POST['email'];
+            $review = $_POST['review'];
+
+            $userRepo = new UserRepository();
+            $userRepo->insertReview($email, $review);
+        }
+    ?>
 </body>
 </html>
