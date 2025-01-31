@@ -1,6 +1,9 @@
 <?php
 session_start();
-session_destroy();
-header("Location: Login.php"); // Redirect to login page after logout
-exit;
+if(isset($_SESSION['email'])){
+    session_destroy();
+    header('Location: Login.php');
+}else{
+    header('Location: Login.php');
+}
 ?>
