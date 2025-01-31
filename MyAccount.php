@@ -18,6 +18,12 @@ $queryCourses = "SELECT title FROM subjectNames";
 $stmtCourses = $conn->prepare($queryCourses);
 $stmtCourses->execute();
 $courses = $stmtCourses->fetchAll(PDO::FETCH_ASSOC);
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['password'])) {
+    $newPassword = $_POST['password'];
+    $userRepo = new UserRepository();
+    $userRepo->updateUserPassword($email, $newPassword);
+}
 ?>
 
 <!DOCTYPE html>
@@ -26,150 +32,108 @@ $courses = $stmtCourses->fetchAll(PDO::FETCH_ASSOC);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Account</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: rgb(90,112,205);
+            font-family: 'Verdana', 'Geneva', 'Tahoma', sans-serif;
+            background: linear-gradient(90deg, rgba(36, 199, 220, 0.65) 0%, rgba(81, 74, 157, 0.7) 55%);
+            color: #fff;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
         }
         header {
-            background: rgb(90,112,205);
-            color: white;
-            padding: 20px;
+            padding: 5px;
             text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
         }
 
         header .Account img {
             width: 20%;
             max-width: 150px;
             display: block;
-            margin: 0 auto;
+            margin: 10px auto;
         }
 
         h1 {
             margin-top: 10px;
+            font-size: 2.5em;
         }
 
         .navbar {
             padding: 15px;
             text-align: right;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background: transparent;
         }
 
         .navbar a {
-            color: white;
+            color: #ffffff;
             margin: 0 15px;
             text-decoration: none;
             font-size: 18px;
+            transition: color 0.3s;
         }
         
         .navbar a:hover {
-            text-decoration: underline;
+            color: white; /* The 'click' color */
         }
 
-        /* Main Content Styles */
         main {
             padding: 20px;
             flex: 1;
         }
 
-        /* Profile Section */
-        #profile {
-            background-color: white;
+        section {
+            background-color: rgba(255, 255, 255, 0.9);
             padding: 20px;
-            border-radius: 30px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
             margin-bottom: 20px;
         }
 
-        #profile h2 {
-            font-size: 25px;
+        section h2 {
+            font-size: 1.8em;
             margin-bottom: 10px;
+            color: #333;
         }
 
-        #profile p {
-            font-size: 19px;
+        section p, section ul {
+            font-size: 1.2em;
             margin: 5px 0;
-        }
-
-        /* Courses Section */
-        #courses {
-            background-color: white;
-            padding: 20px;
-            border-radius: 30px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-        }
-
-        #courses h2 {
-            font-size: 25px;
-            margin-bottom: 10px;
-        }
-
-        #courses ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        #courses ul li {
-            font-size: 19px;
-            margin: 5px 0;
-        }
-
-        /* Settings Section */
-        #settings {
-            background-color: white;
-            padding: 20px;
-            border-radius: 30px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        #settings h2 {
-            font-size: 25px;
-            margin-bottom: 10px;
+            color: #555;
         }
 
         #settings form {
             display: flex;
             flex-direction: column;
-            gap: 2px;
-        }
-
-        #settings label {
-            font-size: 19px;
-            margin-bottom: 8px;
+            gap: 10px;
         }
 
         #settings input[type="password"] {
             padding: 10px;
-            margin-bottom: 15px;
             border: 1px solid #ccc;
-            border-radius: 10px;
-            border-color: #09f;
-            font-size: 17px;
+            border-radius: 5px;
+            font-size: 1em;
         }
 
         #settings button {
-            background-color: #09f;
+            background-color: #39a1ff;
             color: white;
-            padding: 10px 20px;
+            padding: 10px;
             border: none;
-            border-radius: 10px;
-            font-size: 17px;
+            border-radius: 5px;
+            font-size: 1em;
             cursor: pointer;
+            transition: background-color 0.3s;
         }
 
         #settings button:hover {
-            background-color: gray;
+            background-color: #2575fc;
         }
 
-        /* Footer Styles */
         footer {
-            background-color: rgb(90,112,205);
+            background-color: rgb(90, 112, 205);
             color: white;
             text-align: center;
             padding: 10px;
@@ -181,6 +145,14 @@ $courses = $stmtCourses->fetchAll(PDO::FETCH_ASSOC);
         footer p {
             margin: 0;
             font-size: 1em;
+        }
+
+        .black-text {
+            color: black;
+        }
+
+        .bold-text {
+            font-weight: bold;
         }
     </style>
 </head>
@@ -198,22 +170,22 @@ $courses = $stmtCourses->fetchAll(PDO::FETCH_ASSOC);
     <main>
         <section id="profile">
             <h2>Profile Information</h2>
-            <p>Name: <?php echo $user['name']; ?></p>
-            <p>Lastname: <?php echo $user['lastname']; ?></p>
-            <p>Email: <?php echo $user['email']; ?></p>
+            <p><span class="bold-text">Name: </span><?php echo $user['name']; ?></p>
+            <p><span class="bold-text">Lastname: </span><?php echo $user['lastname']; ?></p>
+            <p><span class="bold-text">Email: </span><?php echo $user['email']; ?></p>
         </section>
         <section id="courses">
             <h2>My Courses</h2>
                 <ul>
                     <?php foreach ($courses as $course): ?>
-                        <li><?php echo $course['title']; ?></li>
+                        <li><span class="bold-text"><?php echo $course['title']; ?></span></li>
                     <?php endforeach; ?>
                 </ul>
         </section>
         <section id="settings">
             <h2>Account Settings</h2>
-            <form>
-                <label for="password">Change Password:</label>
+            <form method="POST">
+                <label for="password" class="black-text">Change Password:</label>
                 <input type="password" id="password" name="password" required>
                 <button type="submit">Update Password</button>
             </form>
