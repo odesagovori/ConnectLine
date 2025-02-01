@@ -25,6 +25,10 @@ session_start();
             text-align: right;
         }
 
+        .navbar img {
+            max-height: 50px; /* Adjust logo size */
+        }
+
         .heading {
             width: 90%;
             display: flex;
@@ -161,9 +165,9 @@ session_start();
         .container {
             display: flex;
             gap: 12px;
-            max-width: 550px; /* Increased width */
+            max-width: 700px; /* Increased width */
             width: 100%;
-            background: linear-gradient(#645fce, #9fffcb,#00a5cf);
+            background: linear-gradient(#645fce, #00A5CF);
             border-radius: 14px;
             padding: 30px;
             scroll-snap-type: x mandatory;
@@ -172,6 +176,7 @@ session_start();
             box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
             margin: 0 auto; /* This centers the container horizontally */
             margin-top: 60px;
+            justify-content: flex-start; /* Aligns the slider to the left */
         }
 
         .container .card {
@@ -190,7 +195,7 @@ session_start();
             height: 150px;
             width: 150px;
             padding: 4px;
-            background: #5a70cd;
+            background: #645FCE;
             border-radius: 50%;
         }
 
@@ -257,14 +262,16 @@ session_start();
             padding: 20px;
             border-radius: 30px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            background: linear-gradient(#645fce, #00A5CF);
         }
 
         .review-form h2 {
             text-align: center;
-            color: #333;
+            color: white;
         }
 
         .review-form textarea {
+            font-size: 15px;
             width: 100%;
             padding: 10px;
             border-radius: 5px;
@@ -274,6 +281,7 @@ session_start();
 
         .review-form input[type="email"] {
             width: 100%;
+            font-size: 15px;
             padding: 10px;
             border-radius: 5px;
             border: 1px solid #ccc;
@@ -281,9 +289,10 @@ session_start();
         }
 
         .review-form button {
+            font-size: 20px;
             width: 100%;
             padding: 10px;
-            background-color: #39a1ff;
+            background-color: #645FCE;
             color: white;
             border: none;
             border-radius: 5px;
@@ -292,29 +301,26 @@ session_start();
         }
 
         .review-form button:hover {
-            background-color: gray;
+            background-color: #40356F;
         }
-        
     </style>
 </head>
 <body>
-
     <div class="navbar">
         <img src="Images/LogoImg.png" alt="ConnectLine" style="width: auto; height: 50px; float: left;">
     </div>
 
-    <div class="heading">
-        <h1>About Us</h1>
-    </div>
-
     <div class="container-1">
+        <div class="reviews-heading">
+            <h1>About Us</h1>
+        </div>
         <section class="about">
             <div class="image-1">
                 <img src="Images/Welcome1.png" alt="" srcset="">
             </div>
 
             <div class="content">
-                <h1>GROUP CHAT THAT'S ALL FUN & GAMES</h1> <br>
+                <br> <br> <h1>GROUP CHAT THAT'S ALL FUN & GAMES</h1> <br>
                 <p> We are dedicated to providing the best learning experience for our students. </p>
                 <a href="OurCourses.php" class="Our-courses">Our courses</a>
                 <a href="Welcome.php" class="Back-To-Start">Back To Start</a>
