@@ -35,16 +35,21 @@ if (isset($_POST['editBtn'])) {
         body {
             margin: 0;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
-            background-color: #f0f0f0;
+            background: linear-gradient(30deg, #25a18e, #645fce);
             display: flex;
             flex-direction: column;
             min-height: 100vh;
         }
-
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 50px; 
+        }
         .navbar {
             padding: 15px;
             text-align: right;
-            background-color: rgb(90,112,205);
         }
 
         .navbar a {
@@ -56,10 +61,11 @@ if (isset($_POST['editBtn'])) {
         
         .navbar a:hover {
             text-decoration: underline;
+            color: #004e64;
         }
 
         .footer {
-            background-color: rgb(90,112,205);
+            background-color: #004e64;
             color: white;
             text-align: center;
             padding: 20px;
@@ -73,67 +79,85 @@ if (isset($_POST['editBtn'])) {
             margin: 0 10px;
         }
 
-        h3 {
-            margin-left: 20px;
-        }
-
         input[type="text"],
         input[type="email"],
         input[type="password"] {
-            width: calc(100% - 20px);
+            width: 55%; 
             padding: 15px;
             margin: 10px 0;
-            border-radius: 10px;
+            border-radius: 20px;
             border: 1px solid #ccc;
             font-size: 16px;
         }
 
         input[type="submit"] {
-            padding: 15px;
-            border-radius: 10px;
-            border: none;
-            background-color: rgb(90,112,205);
+            background-color: #004E64; /* Sign Out button color */
             color: white;
-            font-size: 16px;
+            border: none;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 15px;
+            border-radius: 20px; /* Rounder corners */
+            padding: 10px 20px;
             cursor: pointer;
+            margin-left: 10px; /* Adds space from the left border */
+            margin-bottom: 10px;
         }
 
         input[type="submit"]:hover {
             background-color: rgb(70,92,185);
         }
+        .sign-out-button {
+            background-color: #004E64; /* Sign Out button color */
+            color: white;
+            border: none;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 15px;
+            border-radius: 20px; /* Rounder corners */
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-left: 10px; /* Adds space from the left border */
+            margin-bottom: 10px;
+        }
+        .center-text {
+            text-align: center;
+            margin-top: 20px;
+            color: #ffff;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
     </style>
 </head>
 <body>
     <div class="navbar">
-        <img src="ConnectLine.png" alt="ConnectLine" style="width: auto; height: 50px; float: left;"> 
+        <img src="Images/LogoImg.png" alt="ConnectLine" style="width: auto; height: 50px; float: left;"> 
         <a href="Home.php">Courses</a>
         <a href="Chat.php">Chat</a>
         <a href="My Account.php">My Account</a>
-        <a href="Login.php">Sign Out</a>
+        <button class="sign-out-button" onclick="window.location.href='Logout.php'">Sign Out</button>
     </div>
-
-    <h3>Edit User</h3>
+    <div class="center-text">
+        <h1>Edit User</h1>
+    </div>
     <form action="" method="post">
-        <input type="hidden" name="id" value="<?=$user['id']?>"> <br> <br>
+        <input type="hidden" name="id" value="<?=$user['id']?>"> <br> 
         
-        <input type="text" name="name" value="<?=$user['name']?>"> <br> <br>
+        <input type="text" name="name" value="<?=$user['name']?>"> <br> 
         
-        <input type="text" name="lastname" value="<?=$user['lastname']?>"> <br> <br>
+        <input type="text" name="lastname" value="<?=$user['lastname']?>"> <br> 
         
-        <input type="email" name="email" value="<?=$user['email']?>"> <br> <br>
+        <input type="email" name="email" value="<?=$user['email']?>"> <br>
         
-        <input type="text" name="username" value="<?=$user['username']?>"> <br> <br>
+        <input type="text" name="username" value="<?=$user['username']?>"> <br> 
         
-        <input type="password" name="password" placeholder="Enter new password"> <br> <br>
+        <input type="password" name="password" placeholder="Enter new password"> <br> 
 
-        <input type="text" name="role" value="<?=$user['role']?>"> <br> <br>
+        <input type="text" name="role" value="<?=$user['role']?>"> <br> 
 
-        <input type="submit" name="editBtn" value="Save Changes"> <br> <br>
+        <input type="submit" name="editBtn" value="Save Changes"> <br> 
     </form>
     <form action="Dashboard.php" method="get">
         <input type="submit" value="Return to Dashboard">
     </form>
-
+    <br>
     <div class="footer">
         <p>&copy; 2024 ConnectLine. All rights reserved.</p>
     </div>
