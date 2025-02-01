@@ -13,10 +13,9 @@ session_start();
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background: linear-gradient(90deg, rgba(36, 199, 220, 0.86) 0%, rgba(81, 74, 157, 0.86) 55%);
         }
         .navbar {
-            background-color: rgb(90,112,205);
             padding: 15px;
             text-align: right;
         }
@@ -73,9 +72,12 @@ session_start();
 </head>
 <body>
     <div class="navbar">
-        <a href="Home.php">Home</a>
+    <img src="Images/ConnectLine.png" alt="ConnectLine" class="logo" style="width: auto; height: 50px; float: left;"> 
+        <a href="Home.php">Courses</a>
         <a href="MyAccount.php">My Account</a>
+        <a href="AboutUs.php">About Us</a>
         <a href="Logout.php">Sign Out</a>
+
     </div>
 
     <div class="chat-container">
