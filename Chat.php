@@ -13,7 +13,7 @@ session_start();
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(90deg, rgba(36, 199, 220, 0.86) 0%, rgba(81, 74, 157, 0.86) 55%);
+            background: linear-gradient(90deg, #00a5cf, #645fce);
         }
         .navbar {
             padding: 15px;
@@ -25,8 +25,9 @@ session_start();
             text-decoration: none;
             font-size: 18px;
         }
-        .navbar a:hover {
+         .navbar a:hover {
             text-decoration: underline;
+            color: #004e64
         }
         .chat-container {
             width: 80%;
@@ -62,21 +63,40 @@ session_start();
         .input-container button {
             padding: 10px;
             border: none;
-            background-color: rgb(90,112,205);
+            background-color: #645fce;
             color: white;
             border-radius: 5px;
             margin-left: 10px;
             cursor: pointer;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
         }
+        
+        .input-container button:hover{
+            background-color: #40356f;
+        }
+        
+        .sign-out-button {
+            background-color: #004E64; /* Sign Out button color */
+            color: white;
+            border: none;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 15px;
+            border-radius: 20px; /* Rounder corners */
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-left: 10px; /* Adds space from the left border */
+            margin-bottom: 10px;
+        }
+
     </style>
 </head>
 <body>
     <div class="navbar">
-    <img src="Images/ConnectLine.png" alt="ConnectLine" class="logo" style="width: auto; height: 50px; float: left;"> 
+    <img src="Images/LogoImg.png" alt="ConnectLine" class="logo" style="width: auto; height: 50px; float: left;"> 
         <a href="Home.php">Courses</a>
         <a href="MyAccount.php">My Account</a>
         <a href="AboutUs.php">About Us</a>
-        <a href="Logout.php">Sign Out</a>
+        <button class="sign-out-button" onclick="window.location.href='Logout.php'">Sign Out</button>
 
     </div>
 
