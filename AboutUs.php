@@ -17,23 +17,12 @@ session_start();
         }
 
         body {
-            background: linear-gradient(90deg, rgba(36, 199, 220, 0.86) 0%, rgba(81, 74, 157, 0.86) 55%);
+            background: linear-gradient(30deg, #25a18e, #645fce);
         }
 
         .navbar {
             padding: 15px;
             text-align: right;
-        }
-
-        .navbar a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            font-size: 18px;
-        }
-
-        .navbar a:hover {
-            text-decoration: underline;
         }
 
         .heading {
@@ -51,16 +40,6 @@ session_start();
             color: white;
             margin-bottom: 25px;
             position: relative;
-        }
-
-        .heading h1::after {
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: 4px;
-            display: block;
-            margin: 0 auto;
-            background-color: rgba(36, 198, 220, 1);
         }
 
         .heading p {
@@ -117,18 +96,33 @@ session_start();
 
         .content .Our-courses {
             display: inline-block;
-            padding: 12px;
-            background-color: #39a1ff;
+            padding: 10px 20px;
+            background-color: #00a5cf;
             color: #fff;
             font-size: 16px;
             text-decoration: none;
-            border-radius: 10px;
+            border-radius: 20px;
+            margin-top: 15px;
+            transition: 0.3s ease;
+        }
+        .content .Back-To-Start {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #25a18e;
+            color: #fff;
+            font-size: 16px;
+            text-decoration: none;
+            border-radius: 20px;
             margin-top: 15px;
             transition: 0.3s ease;
         }
 
         .content .Our-courses:hover {
-            background-color: gray;
+            background-color: #40356f;
+        }
+
+        .content .Back-To-Start:hover {
+            background-color: #40356f;
         }
 
         @media screen and (max-width: 768px) {
@@ -169,7 +163,7 @@ session_start();
             gap: 12px;
             max-width: 550px; /* Increased width */
             width: 100%;
-            background: #5a70cd;
+            background: linear-gradient(#645fce, #9fffcb,#00a5cf);
             border-radius: 14px;
             padding: 30px;
             scroll-snap-type: x mandatory;
@@ -224,7 +218,7 @@ session_start();
         }
 
         footer {
-            background-color: rgb(90, 112, 205);
+            background-color: #004e64;
             color: white;
             text-align: center;
             padding: 10px;
@@ -253,16 +247,6 @@ session_start();
             color: white;
             margin-top: 50px;
             position: relative;
-        }
-
-        .reviews-heading h1::after {
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: 4px;
-            display: block;
-            margin: 0 auto;
-            background-color: rgba(36, 198, 220, 1);
         }
 
         .review-form {
@@ -310,17 +294,13 @@ session_start();
         .review-form button:hover {
             background-color: gray;
         }
+        
     </style>
 </head>
 <body>
 
     <div class="navbar">
         <img src="Images/ConnectLine.png" alt="ConnectLine" style="width: auto; height: 50px; float: left;">
-        <a href="Home.php">Courses</a>
-        <a href="Chat.php">Chat</a>
-        <a href="MyAccount.php">My Account</a>
-        <a href="AboutUs.php">About Us</a>
-        <a href="Login.php">Sign Out</a>
     </div>
 
     <div class="heading">
@@ -336,7 +316,8 @@ session_start();
             <div class="content">
                 <h1>GROUP CHAT THAT'S ALL FUN & GAMES</h1> <br>
                 <p> We are dedicated to providing the best learning experience for our students. </p>
-                <a href="Home.php" class="Our-courses">Our courses</a>
+                <a href="OurCourses.php" class="Our-courses">Our courses</a>
+                <a href="Welcome.php" class="Back-To-Start">Back To Start</a>
             </div>
         </section>
     </div>
