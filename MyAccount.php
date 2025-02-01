@@ -14,7 +14,7 @@ $stmt->bindParam(':email', $email);
 $stmt->execute();
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-$queryCourses = "SELECT title FROM subjectNames";
+$queryCourses = "SELECT title FROM subjects";
 $stmtCourses = $conn->prepare($queryCourses);
 $stmtCourses->execute();
 $courses = $stmtCourses->fetchAll(PDO::FETCH_ASSOC);
@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['password'])) {
     <style>
         body {
             font-family: 'Verdana', 'Geneva', 'Tahoma', sans-serif;
-            background: linear-gradient(90deg, rgba(36, 199, 220, 0.65) 0%, rgba(81, 74, 157, 0.7) 55%);
+            background: linear-gradient(#645fce,#25a18e,#004e64);
             color: #fff;
             display: flex;
             flex-direction: column;
@@ -47,6 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['password'])) {
             padding: 5px;
             text-align: center;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            border-radius: 5px;
         }
 
         header .Account img {
@@ -74,9 +75,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['password'])) {
             font-size: 18px;
             transition: color 0.3s;
         }
-        
         .navbar a:hover {
-            color: white; /* The 'click' color */
+            text-decoration: underline;
+            color: #004E64;
         }
 
         main {
@@ -118,7 +119,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['password'])) {
         }
 
         #settings button {
-            background-color: #39a1ff;
+            background-color:#25a18e;
             color: white;
             padding: 10px;
             border: none;
@@ -129,17 +130,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['password'])) {
         }
 
         #settings button:hover {
-            background-color: #2575fc;
+            background-color:#004e64;
+        }
+
+        #settings label {
+            font-size: 1em; 
         }
 
         footer {
-            background-color: rgb(90, 112, 205);
+            background-color: #004e64;
             color: white;
             text-align: center;
             padding: 10px;
             position: relative;
             width: 100%;
             bottom: 0;
+            left: 0;
         }
 
         footer p {
@@ -164,7 +170,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['password'])) {
         <h1>My Account</h1>
         <nav class="navbar">
             <a href="Home.php">Courses</a>
-            <a href="Login.php">Logout</a>
+            <a href="Login.php">Sign Out</a>
         </nav>
     </header>
     <main>

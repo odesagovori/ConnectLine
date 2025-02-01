@@ -1,5 +1,5 @@
 <?php
-session_start();
+ob_start();
 ?>
 
 <!DOCTYPE html>
@@ -12,8 +12,7 @@ session_start();
 <body>
     <style>
         body {
-            background-color: rgb(38,62,120);
-            background: linear-gradient(90deg, rgba(69,104,220,1) 0%, rgba(176,106,179,1) 55%);
+            background: linear-gradient(#40356f, #00a5cf);
             color: white;
         }
 
@@ -57,7 +56,8 @@ session_start();
         }
 
         .login-box input[type="text"]::placeholder,
-        .login-box input[type="password"]::placeholder {
+        .login-box input[type="password"]::placeholder,
+        .login-box input[type="email"]::placeholder{
             color: gray;
             font-size: 15px;
             text-align: left;
@@ -70,13 +70,19 @@ session_start();
             border-radius: 10px;
             border-color: #39a1ff;
         }
+        .login-box input[type="email"] {
+            width: 85%;
+            padding: 10px;
+            border-radius: 10px;
+            border-color: #39a1ff;
+        }
         
         .register-text {
             color:  #39a1ff;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
         }
         .login-box button {
-            background: #39a1ff;
+            background: #00a5cf;
             color: white;
             padding: 12px;
             border: none;
@@ -89,13 +95,13 @@ session_start();
         }
 
         .login-box button:hover {
-            background-color: gray;
+            background-color: #004e64;
         }
     </style>
 
     <div class="login-container">
         <div class="login-box">
-            <img src="LoginLogo.png" alt="Login Icon" class="center" style="width: 40%">
+            <img src="Images/LoginLogo.png" alt="Login Icon" class="center" style="width: 40%">
             <div class="register-text">
                 <h3>Register</h3>
             </div>

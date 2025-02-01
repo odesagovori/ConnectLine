@@ -300,7 +300,7 @@ session_start();
 <body>
 
     <div class="navbar">
-        <img src="Images/ConnectLine.png" alt="ConnectLine" style="width: auto; height: 50px; float: left;">
+        <img src="Images/LogoImg.png" alt="ConnectLine" style="width: auto; height: 50px; float: left;">
     </div>
 
     <div class="heading">

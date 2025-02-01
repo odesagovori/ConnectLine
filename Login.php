@@ -36,8 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <title>Login</title>
     <style>
         body {
-            background-color: rgb(38,62,120);
-            background: linear-gradient(90deg, rgba(36,198,220,1) 0%, rgba(81,74,157,1) 55%);
+            background: linear-gradient(#004e64, #00a5cf);
             color: white;
         }
 
@@ -67,7 +66,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             padding: 40px 20px;
             box-shadow: 0 0 100px rgba(0, 0, 0, 0.1);
             width: 350px;
-            border: 2px solid;
             text-align: center;
         }
 
@@ -95,7 +93,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
         .login-box button {
-            background: #39a1ff;
+            background: #00a5cf;
             color: white;
             padding: 12px;
             border: none;
@@ -112,7 +110,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             font-family: 'Arial';
         }
         .login-box button:hover {
-            background-color: gray;
+            background-color: #004e64;
         }
 
         .login-box .button2 {
@@ -132,7 +130,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body>
     <div class="login-container">
         <div class="login-box">
-            <img src="LoginLogo.png" alt="Login Icon" class="center" style="width: 40%">
+            <img src="Images/LoginLogo.png" alt="Login Icon" class="center" style="width: 40%">
             <div class="login-text">
                 <h3>Login</h3>
             </div>
