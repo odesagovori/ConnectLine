@@ -95,5 +95,15 @@ class UserRepository {
         $statement = $conn->prepare($sql);
         $statement->execute([$email, $review]);
     }
+
+    function updateUserPassword($email, $newPassword) {
+        $conn = $this->connection;
+
+        $sql = "UPDATE users SET password=? WHERE email=?";
+        $statement = $conn->prepare($sql); 
+        $statement->execute([password_hash($newPassword, PASSWORD_DEFAULT), $email]);
+
+        echo "<script>alert('Password updated successfully');</script>";
+    }
 }
 ?>
