@@ -160,6 +160,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['password'])) {
         .bold-text {
             font-weight: bold;
         }
+        .sign-out-button {
+            background-color: #004E64; /* Sign Out button color */
+            color: white;
+            border: none;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 15px;
+            border-radius: 20px; /* Rounder corners */
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-left: 10px; /* Adds space from the left border */
+            margin-bottom: 10px;
+        }
+
     </style>
 </head>
 <body>
@@ -170,7 +183,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['password'])) {
         <h1>My Account</h1>
         <nav class="navbar">
             <a href="Home.php">Courses</a>
-            <a href="Login.php">Sign Out</a>
+            <button class="sign-out-button" onclick="window.location.href='Logout.php'">Sign Out</button>
         </nav>
     </header>
     <main>
