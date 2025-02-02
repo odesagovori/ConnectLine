@@ -110,6 +110,7 @@ session_start();
             margin-top: 15px;
             transition: 0.3s ease;
         }
+        
         .content .Back-To-Start {
             display: inline-block;
             padding: 10px 20px;

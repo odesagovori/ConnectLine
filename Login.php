@@ -113,6 +113,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             font-size: 20px;
         }
+
         .login-box button:hover {
             background-color: #004e64;
         }
@@ -128,7 +129,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             text-align: center;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
         }
-
     </style>
 </head>
 <body>
@@ -179,6 +179,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             }
         });
     </script>
-
 </body>
 </html>

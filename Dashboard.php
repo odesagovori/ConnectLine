@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 
 if (!isset($_SESSION['email'])) {
@@ -17,6 +17,8 @@ if (!isset($_SESSION['email'])) {
             margin: 0;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             background: linear-gradient(30deg, #645fce, #25a18e);
+            display: flex;
+            flex-direction: column;
         }
 
         .navbar {
@@ -94,6 +96,7 @@ if (!isset($_SESSION['email'])) {
             position: relative;
             bottom: 0;
             width: 100%;
+            margin-top: auto; 
         }
 
         .footer a {

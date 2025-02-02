@@ -1,5 +1,6 @@
-<?php    
+<?php
 session_start();
+
 $hide = "hide";
 if (!isset($_SESSION['email'])) {
     header("Location: Welcome.php");
@@ -291,7 +292,7 @@ $subjects = $stmt->fetchAll(PDO::FETCH_ASSOC);
             const searchInput = document.getElementById('courseSearch').value.toLowerCase();
             const courses = document.querySelectorAll('.card');
             courses.forEach(course => {
-                const title = course.getAttribute('data-title');
+                const title = course.getAttribute('data-title').toLowerCase();
                 if (title.includes(searchInput)) {
                     course.style.display = 'block';
                 } else {

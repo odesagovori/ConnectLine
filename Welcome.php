@@ -10,11 +10,6 @@ session_start();
     <title>Welcome</title>
     <link rel="stylesheet" href="Welcome.css">
 </head>
-<body>
-    <div style="position: relative;">
-     <img src="Images/Welcome.png" style="position: absolute; left: 800px; top: 180px; width: 40%;">
-    </div>
-    
     <style>
         body {
             background: linear-gradient(30deg, #25a18e, #645fce);
@@ -93,6 +88,11 @@ session_start();
             background-color: #7Ae582;
         }
     </style>
+    </head>
+<body>
+    <div style="position: relative;">
+     <img src="Images/Welcome.png" style="position: absolute; left: 800px; top: 180px; width: 40%;">
+    </div>
 
     <div class="navbar">
         <button class="login-button" onclick="window.location.href='Login.php'">LOGIN</button>

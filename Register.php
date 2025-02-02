@@ -56,7 +56,6 @@ ob_start();
         .login-box input[type="text"]::placeholder,
         .login-box input[type="password"]::placeholder,
         .login-box input[type="email"]::placeholder{
-            font-size: 15px;
             text-align: left;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
         }
@@ -64,18 +63,13 @@ ob_start();
         .login-box input[type="text"],
         .login-box input[type="password"] {
             width: 85%;
-            padding: 12px;
+            font-size: 15px;
+            padding: 10px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
             border-radius: 30px;
             border-color: #39a1ff;
             border: 2px solid #00A5CF; /* Single border */
             background: rgba(255, 255, 255, 0.5);
-        }
-
-        .login-box input[type="email"] {
-            width: 85%;
-            padding: 10px;
-            border-radius: 10px;
-            border-color: #39a1ff;
         }
         
         .register-text {
@@ -101,7 +95,6 @@ ob_start();
             background-color: #004e64;
         }
     </style>
-
     <div class="login-container">
         <div class="login-box">
             <img src="Images/LoginPic.png" alt="LoginPic" class="center" style="width: 40%">

@@ -40,6 +40,7 @@ if (isset($_POST['editBtn'])) {
             flex-direction: column;
             min-height: 100vh;
         }
+
         form {
             display: flex;
             flex-direction: column;
@@ -47,6 +48,7 @@ if (isset($_POST['editBtn'])) {
             justify-content: center;
             margin-top: 50px; 
         }
+        
         .navbar {
             padding: 15px;
             text-align: right;
