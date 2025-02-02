@@ -45,8 +45,10 @@ $messages = $conn->query($sql)->fetchAll(PDO::FETCH_ASSOC);
             text-decoration: none;
             font-size: 18px;
         }
+        
         .navbar a:hover {
-            text-decoration: #40356F;
+            text-decoration: underline;
+            color: #004e64;
         }
         .chat-container {
             flex: 1;
@@ -128,19 +130,6 @@ $messages = $conn->query($sql)->fetchAll(PDO::FETCH_ASSOC);
             font-family: Verdana, Geneva, Tahoma, sans-serif;
         }
 
-        .sign-out-button {
-            background-color: #004E64; /* Sign Out button color */
-            color: white;
-            border: none;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            font-size: 15px;
-            border-radius: 20px; /* Rounder corners */
-            padding: 10px 20px;
-            cursor: pointer;
-            margin-left: 10px; /* Adds space from the left border */
-            margin-bottom: 10px;
-        }
-
         .chatroom-heading {
             text-align: center;
             font-size: 30px;
@@ -155,7 +144,6 @@ $messages = $conn->query($sql)->fetchAll(PDO::FETCH_ASSOC);
         <img src="Images/LogoImg.png" alt=LogoImg style="width: auto; height: 50px; float: left;">
         <a href="Home.php">Courses</a>
         <a href="MyAccount.php">My Account</a>
-        <button class="sign-out-button" onclick="window.location.href='Logout.php'">Sign Out</button>
     </div>
 
     <h1 class="chatroom-heading">Hyrje në Algoritme Chat Room</h1>
@@ -176,7 +164,7 @@ $messages = $conn->query($sql)->fetchAll(PDO::FETCH_ASSOC);
     </form>
 
     <div class="footer">
-        <p>&copy; 2024 Connect Line. All rights reserved.</p>
+        <p>&copy; 2024 Connect Line. All rights reserved. Contact Us: support@connectline.com</p>
     </div>
 </body>
 </html>
