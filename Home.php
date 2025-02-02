@@ -2,7 +2,8 @@
 session_start();
 $hide = "hide";
 if (!isset($_SESSION['email'])) {
-    header("Location: Login.php");
+    header("Location: Welcome.php");
+    exit;
 } else {
     if ($_SESSION['role'] == "admin") {
         $hide = ""; // Show Dashboard for admin
@@ -41,7 +42,7 @@ $subjects = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         .bg {
             animation:slide 3s ease-in-out infinite alternate;
-            background-image: linear-gradient(-60deg, #09f 50%, #6c3 50%);
+            background-image: linear-gradient(to bottom left, #645fce 40%, #25a18e 40%);
             bottom:0;
             left:-50%;
             opacity:.5;
@@ -84,6 +85,7 @@ $subjects = $stmt->fetchAll(PDO::FETCH_ASSOC);
         
         .navbar a:hover {
             text-decoration: underline;
+            color: #004e64;
         }
 
         .box-container {
@@ -123,12 +125,13 @@ $subjects = $stmt->fetchAll(PDO::FETCH_ASSOC);
             width: 300px;
             padding: 10px 20px;
             font-size: 16px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
             border-radius: 25px; 
-            border: 1px solid white;
+            border: 1px solid transparent; /* Changed to transparent */
             outline: none; 
             align-items: center;
             display: flex;
-            background: white;
+            background: rgba(255, 255, 255, 0.5); /* Made it transparent */
             color: black;
         }
 
@@ -171,7 +174,7 @@ $subjects = $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
 
         .footer {
-            background-color: rgb(90,112,205);
+            background-color: #004e64;
             color: white;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             text-align: center;
@@ -188,12 +191,13 @@ $subjects = $stmt->fetchAll(PDO::FETCH_ASSOC);
             font-family: Verdana, Geneva, Tahoma, sans-serif;
         }
 
-        .register-button {
-            background-color: rgb(90,112,205);
+        .go-to-chat-button {
+            background-color: #645FCE; /* Changed button color */
             color: white;
             border: none;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             font-size: 15px;
+            border: 2.5px solid #004E64;
             border-radius: 20px;
             padding: 10px 20px;
             cursor: pointer;
@@ -202,21 +206,55 @@ $subjects = $stmt->fetchAll(PDO::FETCH_ASSOC);
             margin-left: 10px; /* Adds space from the left border */
             margin-bottom: 10px;
         }
+
+        .sign-out-button {
+            background-color: #004E64; /* Sign Out button color */
+            color: white;
+            border: none;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 15px;
+            border: 2.5px solid white;
+            border-radius: 20px; /* Rounder corners */
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-left: 10px; /* Adds space from the left border */
+            margin-bottom: 10px;
+        }
+
+        .sign-out-button:hover {
+            background-color: #00a5cf;
+        }
+
+        .dashboard-button {
+            background-color: #40356F; /* Dashboard button color */
+            color: white;
+            border: none;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 15px;
+            border: 2.5px solid white;
+            border-radius: 20px; /* Rounder corners */
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-left: 10px; /* Adds space from the left border */
+            margin-bottom: 10px;
+        }
+        
+        .dashboard-button:hover {
+            background-color: #645fce;
+        }
     </style>
 </head>
 <body>
     <!--Navigation bar:-->
     <div class="navbar">
-        <img src="Images/ConnectLine.png" alt="ConnectLine" style="width: auto; height: 50px; float: left;"> 
-        <a href="Home.php">Courses</a>
-        <a href="Chat.php">Chat</a>
+        <img src="Images/LogoImg.png" alt=LogoImg style="width: auto; height: 50px; float: left;"> 
+        <a href="Chat.php">General Chat</a>
         <a href="MyAccount.php">My Account</a>
-        <a href="AboutUs.php">About Us</a>
-        <a href="Dashboard.php" class="<?=$hide?>">Dashboard</a>
+        <button class="dashboard-button <?=$hide?>" onclick="window.location.href='Dashboard.php'">Dashboard</button>
         <?php
         //echo $_SESSION['email'];
         ?>
-        <a href="Logout.php">Sign Out</a>
+        <button class="sign-out-button" onclick="window.location.href='Logout.php'">Sign Out</button>
     </div>
 
     <!--Courses Heading:-->
@@ -229,11 +267,21 @@ $subjects = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     <!--Courses:-->
     <div class="box-container" id="courseContainer">
-        <?php foreach ($subjects as $subject): ?>
+        <?php 
+        $chatMap = [
+            'Shkenca Kompjuterike 2' => 'Java_Chat.php',
+            'Dizajni dhe Zhvillimi i Web-it' => 'Web_Chat.php',
+            'Strukturat Diskrete 1' => 'Math_Chat.php',
+            'Hyrje në Algoritme' => 'Algorithms_Chat.php',
+            'Rrjeta Kompjuterike dhe Komunikimi' => 'Network_Chat.php',
+            'Sistemet e Bazës së të Dhënave' => 'Database_Chat.php',
+        ];
+
+        foreach ($subjects as $subject): ?>
             <div class="card" data-title="<?= htmlspecialchars($subject['title']) ?>">
                 <img src="<?= htmlspecialchars($subject['image']) ?>" alt="<?= htmlspecialchars($subject['title']) ?>" style="width: 100%;">
-                <p style="color: rgb(90,112,205); text-align: center; font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 18px;"><?= htmlspecialchars($subject['title']) ?></p>
-                <button class="register-button" onclick="window.location.href='Chat.php'">Go to Chat</button>
+                <p style="color: rgb(0, 78, 100); text-align: center; font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 18px;"><?= htmlspecialchars($subject['title']) ?></p>
+                <button class="go-to-chat-button" onclick="window.location.href='<?= $chatMap[$subject['title']] ?? 'Chat.php' ?>'">Go to Chat</button>
             </div>
         <?php endforeach; ?>
     </div>
@@ -260,7 +308,7 @@ $subjects = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     <!--Footer:-->
     <div class="footer">
-        <p>&copy; 2024 Connect Line. All rights reserved.</p>
+        <p>&copy; 2024 Connect Line. All rights reserved. Contact Us: support@connectline.com</p>
     </div>
 </body>
 </html>

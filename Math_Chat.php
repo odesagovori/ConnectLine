@@ -18,6 +18,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 $sql = "SELECT cm.message, u.username, cm.created_at FROM java_chat cm JOIN users u ON cm.email = u.email ORDER BY cm.created_at ASC";
 $messages = $conn->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+
+// Define a function to generate a unique color for each username
+function getColor($username) {
+    $colors = [
+        'red', 'blue', 'green', 'orange', 'purple', 'brown', 'pink', 'cyan', 'magenta', 'lime'
+    ];
+    return $colors[crc32($username) % count($colors)];
+}
 ?>
 
 <!DOCTYPE html>
@@ -35,45 +43,91 @@ $messages = $conn->query($sql)->fetchAll(PDO::FETCH_ASSOC);
             flex-direction: column;
             height: 120vh;
         }
+
+        .bg {
+            animation:slide 3s ease-in-out infinite alternate;
+            background-image: linear-gradient(to bottom left, #25A18E 40%, #7AE582 40%);
+            bottom:0;
+            left:-50%;
+            opacity:.5;
+            position:fixed;
+            right:-50%;
+            top:0;
+            z-index:-1;
+        }
+
+        .bg2 {
+            animation-direction:alternate-reverse;
+            animation-duration:4s;
+        }
+
+        .bg3 {
+            animation-duration:5s;
+        }
+
+        @keyframes slide {
+            0% {
+                transform:translateX(-25%);
+            }
+            100% {
+                transform:translateX(25%);
+            }
+        }
+
         .navbar {
             padding: 15px;
             text-align: right;
         }
+
         .navbar a {
             color: white;
             margin: 0 15px;
             text-decoration: none;
             font-size: 18px;
         }
-        
+
         .navbar a:hover {
             text-decoration: underline;
             color: #004e64;
         }
+
         .chat-container {
             flex: 1;
             width: 70%;
             margin: 20px auto;
             background: rgba(255, 255, 255, 0.5);
-            border-radius: 20px;
+            border-radius: 50px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             padding: 40px;
             overflow-y: auto;
             max-height: 70vh; /* Set a maximum height for the chat area */
         }
+
         #messages {
             max-height: 60vh; /* Set a maximum height for the messages area */
-            overflow-y: auto; /* Enable scrolling */
         }
+
         .message {
             margin: 10px 0;
             padding: 10px;
             border-radius: 20px;
             color: #645FCE;
             font-size: 15px;
-            background-color: white;
+            background-color: rgba(255, 255, 255, 0.5);
             border: 1px;
             padding: 10px 10px;
+            position: relative; /* Position for the delete button */
+        }
+
+        .delete-button {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            background: none;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            border: none;
+            color: lightcoral;
+            cursor: pointer;
         }
         .input-container {
             display: flex;
@@ -83,15 +137,17 @@ $messages = $conn->query($sql)->fetchAll(PDO::FETCH_ASSOC);
             margin-right: auto; /* Center the input container */
             margin-bottom: 30px; /* Add space between input container and footer */
         }
+
         .input-container input {
             flex: 1;
             padding: 10px;
             border: 1px solid #645FCE;
             border-radius: 20px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
             font-size: 15px;
             background: rgba(255, 255, 255, 0.5);
-            color: white; /* Change input text color to white */
         }
+
         .input-container button {
             padding: 15px;
             border: none;
@@ -101,19 +157,22 @@ $messages = $conn->query($sql)->fetchAll(PDO::FETCH_ASSOC);
             border-radius: 20px;
             margin-left: 10px;
             cursor: pointer;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
         }
+
         .username {
             font-size: 15px;
-            background-color: #645FCE;
-            color: white;
-            border: 1px solid #645FCE; /* Sign Out shape border design */
+            background-color: rgba(255, 255, 255, 0.5);
+            border: 1px solid; /* Sign Out shape border design */
             border-radius: 20px; /* Rounder corners */
             padding: 5px 10px; /* Padding for better appearance */
         }
+
         .timestamp {
             font-size: 10px;
             color: gray;
         }
+        
         .footer {
             background-color: #004e64;
             color: white;
@@ -129,6 +188,7 @@ $messages = $conn->query($sql)->fetchAll(PDO::FETCH_ASSOC);
             margin: 0 10px;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
         }
+
         .chatroom-heading {
             text-align: center;
             font-size: 30px;
@@ -139,6 +199,8 @@ $messages = $conn->query($sql)->fetchAll(PDO::FETCH_ASSOC);
     </style>
 </head>
 <body>
+    <div class="bg"></div>
+
     <div class="navbar">
         <img src="Images/LogoImg.png" alt=LogoImg style="width: auto; height: 50px; float: left;">
         <a href="Home.php">Courses</a>
@@ -151,7 +213,11 @@ $messages = $conn->query($sql)->fetchAll(PDO::FETCH_ASSOC);
         <div id="messages">
             <?php foreach ($messages as $msg): ?>
                 <div class="message">
-                    <strong class="username"><?php echo htmlspecialchars($msg['username']); ?>:</strong> <?php echo htmlspecialchars($msg['message']); ?> <em class="timestamp">(<?php echo date('H:i:s', strtotime($msg['created_at'])); ?>)</em>
+                    <strong class="username" style="color: <?php echo getColor($msg['username']); ?>;"><?php echo htmlspecialchars($msg['username']); ?>:</strong> <?php echo htmlspecialchars($msg['message']); ?> <em class="timestamp">(<?php echo date('H:i:s', strtotime($msg['created_at'])); ?>)</em>
+                    <form method="POST" style="display:inline;">
+                        <input type="hidden" name="message_id" value="<?php echo $msg['id']; ?>">
+                        <button type="submit" name="delete" class="delete-button">Delete</button>
+                    </form>
                 </div>
             <?php endforeach; ?>
         </div>

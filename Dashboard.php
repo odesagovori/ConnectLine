@@ -16,16 +16,14 @@ if (!isset($_SESSION['email'])) {
         body {
             margin: 0;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
-            background-color: #f0f0f0;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
+            background: linear-gradient(30deg, #645fce, #25a18e);
         }
+
         .navbar {
             padding: 15px;
             text-align: right;
-            background-color: rgb(90,112,205);
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            /* background-color: #004E64; */
+            /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
         }
 
         .navbar a {
@@ -37,6 +35,7 @@ if (!isset($_SESSION['email'])) {
         
         .navbar a:hover {
             text-decoration: underline;
+            color: #004e64;
         }
 
         .logo {
@@ -48,7 +47,7 @@ if (!isset($_SESSION['email'])) {
             text-align: center;
             margin-top: 20px;
             font-size: 2.5em;
-            color: rgb(90,112,205);
+            color: white; /* User Management */
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
         }
 
@@ -64,13 +63,13 @@ if (!isset($_SESSION['email'])) {
         th, td {
             padding: 10px; 
             text-align: left;
-            border: 1px solid #ddd;
+            border: 1px solid #004e64;
             font-size: 14px; 
             border-radius: 2px;
         }
 
         th {
-            background-color: rgb(90,112,205);
+            background-color: #004E64;
             color: white;
         }
 
@@ -87,21 +86,39 @@ if (!isset($_SESSION['email'])) {
         }
 
         .footer {
-            background-color: rgb(90,112,205);
+            background-color: #004e64;
             color: white;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
             text-align: center;
-            padding: 10x;
+            padding: 5px;
             position: relative;
             bottom: 0;
             width: 100%;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            margin-top: auto;
         }
 
         .footer a {
             color: black;
             text-decoration: none;
             margin: 0 10px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        .sign-out-button {
+            background-color: #004E64; /* Sign Out button color */
+            color: white;
+            border: none;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 15px;
+            border: 2.5px solid white;
+            border-radius: 20px; /* Rounder corners */
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-left: 10px; /* Adds space from the left border */
+            margin-bottom: 10px;
+        }
+
+        .sign-out-button:hover {
+            background-color: #00A5CF;
         }
 
         .button {
@@ -135,11 +152,11 @@ if (!isset($_SESSION['email'])) {
     </style>
 
     <div class="navbar">
-        <img src="Images/ConnectLine.png" alt="ConnectLine" class="logo" style="width: auto; height: 50px;"> 
+        <img src="Images/LogoImg.png" alt="LogoImg" class="logo" style="width: auto; height: 50px;"> 
+        <a href="Chat.php">General Chat</a>
         <a href="Home.php">Courses</a>
-        <a href="Chat.php">Chat</a>
         <a href="MyAccount.php">My Account</a>
-        <a href="Login.php">Sign Out</a>
+        <button class="sign-out-button" onclick="window.location.href='Logout.php'">Sign Out</button>
     </div>
 
     <h1>User Management</h1>
@@ -182,7 +199,7 @@ if (!isset($_SESSION['email'])) {
     </table>
 
     <div class="footer">
-        <p>&copy; 2024 Connect Line. All rights reserved</p>
+        <p>&copy; 2024 Connect Line. All rights reserved. Contact Us: support@connectline.com</p>
     </div>
 
 <?php 

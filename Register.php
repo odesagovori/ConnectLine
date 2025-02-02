@@ -38,12 +38,10 @@ ob_start();
 
         .login-box {
             border-radius: 30px;
-            background: white;
             padding: 40px 20px;
-
+            background: rgba(255, 255, 255, 0.5);
             box-shadow: 0 0 100px rgba(0, 0, 0, 0.1);
             width: 350px;
-            border: 2px solid;
             text-align: center;
         }
 
@@ -58,18 +56,21 @@ ob_start();
         .login-box input[type="text"]::placeholder,
         .login-box input[type="password"]::placeholder,
         .login-box input[type="email"]::placeholder{
-            color: gray;
             font-size: 15px;
             text-align: left;
-            font-family: 'Arial';
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
         }
+        
         .login-box input[type="text"],
         .login-box input[type="password"] {
             width: 85%;
-            padding: 10px;
-            border-radius: 10px;
+            padding: 12px;
+            border-radius: 30px;
             border-color: #39a1ff;
+            border: 2px solid #00A5CF; /* Single border */
+            background: rgba(255, 255, 255, 0.5);
         }
+
         .login-box input[type="email"] {
             width: 85%;
             padding: 10px;
@@ -78,15 +79,17 @@ ob_start();
         }
         
         .register-text {
-            color:  #39a1ff;
+            color: white;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 20px;
         }
+
         .login-box button {
             background: #00a5cf;
             color: white;
             padding: 12px;
             border: none;
-            border-radius: 10px;
+            border-radius: 30px;
             width: 60%;
             cursor: pointer;
             font-size: 16px;
@@ -101,7 +104,7 @@ ob_start();
 
     <div class="login-container">
         <div class="login-box">
-            <img src="Images/LoginLogo.png" alt="Login Icon" class="center" style="width: 40%">
+            <img src="Images/LoginPic.png" alt="LoginPic" class="center" style="width: 40%">
             <div class="register-text">
                 <h3>Register</h3>
             </div>
@@ -110,7 +113,7 @@ ob_start();
             <br> <br>
             <input type="text" id="lastname" name="lastname" placeholder="Last Name" required>
             <br> <br>
-            <input type="email" id="email" name="email" placeholder="E-mail" required>
+            <input type="text" id="email" name="email" placeholder="E-mail" required>
             <br> <br>
             <input type="text" id="username" name="username" placeholder="Username" required>
             <br> <br>

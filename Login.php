@@ -37,13 +37,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <style>
         body {
             background: linear-gradient(#004e64, #00a5cf);
-            color: white;
         }
 
         .navbar {
             padding: 18px;
             text-align: center;
-            font-family: 'Arial';
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
         }
 
         .navbar a {
@@ -62,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         .login-box {
             border-radius: 30px;
-            background: white;
+            background: rgba(255, 255, 255, 0.5);
             padding: 40px 20px;
             box-shadow: 0 0 100px rgba(0, 0, 0, 0.1);
             width: 350px;
@@ -77,37 +76,42 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             margin-left: auto;
         }
 
-        .login-box input[type="text"]::placeholder,
-        .login-box input[type="password"]::placeholder {
-            color: gray;
-            font-size: 15px;
-            text-align: left;
-            font-family: 'Arial';
-        }
         .login-box input[type="text"],
         .login-box input[type="password"] {
             width: 85%;
             padding: 10px;
-            border-radius: 10px;
-            border-color: #39a1ff;
+            border-radius: 30px;
+            border: 2px solid #00A5CF; /* Single border */
+            background: rgba(255, 255, 255, 0.5);
+            font-size: 15px;
+            text-align: left;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        .login-box input[type="text"]::placeholder,
+        .login-box input[type="password"]::placeholder {
+            font-size: 15px;
+            text-align: left;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
         }
 
         .login-box button {
-            background: #00a5cf;
+            background: #00A5CF;
             color: white;
             padding: 12px;
             border: none;
-            border-radius: 10px;
+            border-radius: 30px;
             width: 60%;
             cursor: pointer;
             font-size: 16px;
             text-align: center;
-            font-family: 'Arial';
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
         }
         
         .login-text {
-            color:  #39a1ff;
-            font-family: 'Arial';
+            color: white;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 20px;
         }
         .login-box button:hover {
             background-color: #004e64;
@@ -122,7 +126,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             cursor: pointer;
             font-size: 12px;
             text-align: center;
-            font-family: 'Arial';
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
         }
 
     </style>
@@ -130,7 +134,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body>
     <div class="login-container">
         <div class="login-box">
-            <img src="Images/LoginLogo.png" alt="Login Icon" class="center" style="width: 40%">
+            <img src="Images/LoginPic.png" alt="LoginPic" class="center" style="width: 40%">
             <div class="login-text">
                 <h3>Login</h3>
             </div>
@@ -143,7 +147,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <button type="submit" id="submit-btn">Login</button>
             </form>
             <br> <br>
-            <a href="Register.php" style="text-decoration: none; font-family: Arial, Helvetica, sans-serif; font-size: 13px;">Don't have an account? Create one here.</a>
+            <a href="Register.php" style="text-decoration: none;  font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 13px;">Don't have an account? Create one here.</a>
             
             <?php
             // If there's an error message, display it

@@ -1,18 +1,5 @@
-<?php    
-session_start();
-$hide = "hide";
-if (!isset($_SESSION['email'])) {
-    header("Location: Welcome.php");
-    exit;
-} else {
-    if ($_SESSION['role'] == "admin") {
-        $hide = ""; // Show Dashboard for admin
-    } else {
-        $hide = "hide"; // Ensure non-admin users have the Dashboard link hidden
-    }
-?>
-
 <?php
+session_start();
 require_once 'Database.php'; // Include the Database class
 
 $db = new Database();
@@ -124,6 +111,7 @@ $subjects = $stmt->fetchAll(PDO::FETCH_ASSOC);
         .search-bar {
             width: 300px;
             padding: 10px 20px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
             font-size: 16px;
             border-radius: 25px; 
             border: 1px solid transparent; /* Changed to transparent */
@@ -214,14 +202,20 @@ $subjects = $stmt->fetchAll(PDO::FETCH_ASSOC);
             border-radius: 20px; /* Rounder corners */
             padding: 10px 20px;
             cursor: pointer;
+            border: 2.5px solid white;
             margin-left: 10px; /* Adds space from the left border */
             margin-bottom: 10px;
+        }
+
+        .sign-out-button:hover {
+            background-color: #00A5CF;
         }
 
         .go-to-register-button {
             background-color: #40356F; /* Dashboard button color */
             color: white;
             border: none;
+            border: 2.5px solid white;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             font-size: 15px;
             border-radius: 20px; /* Rounder corners */
@@ -229,6 +223,10 @@ $subjects = $stmt->fetchAll(PDO::FETCH_ASSOC);
             cursor: pointer;
             margin-left: 10px; /* Adds space from the left border */
             margin-bottom: 10px;
+        }
+
+        .go-to-register-button:hover {
+            background-color: #645FCE;
         }
     </style>
 </head>
@@ -280,10 +278,7 @@ $subjects = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     <!--Footer:-->
     <div class="footer">
-        <p>&copy; 2024 Connect Line. All rights reserved.</p>
+        <p>&copy; 2024 Connect Line. All rights reserved. Contact Us: support@connectline.com</p>
     </div>
 </body>
 </html>
-<?php
-}
-?>

@@ -104,6 +104,7 @@ session_start();
             background-color: #00a5cf;
             color: #fff;
             font-size: 16px;
+            border: 2.5px solid white;
             text-decoration: none;
             border-radius: 20px;
             margin-top: 15px;
@@ -115,6 +116,7 @@ session_start();
             background-color: #25a18e;
             color: #fff;
             font-size: 16px;
+            border: 2.5px solid white;
             text-decoration: none;
             border-radius: 20px;
             margin-top: 15px;
@@ -274,7 +276,7 @@ session_start();
             font-size: 15px;
             width: 100%;
             padding: 10px;
-            border-radius: 5px;
+            border-radius: 15px;
             border: 1px solid #ccc;
             margin-bottom: 10px;
         }
@@ -283,7 +285,7 @@ session_start();
             width: 100%;
             font-size: 15px;
             padding: 10px;
-            border-radius: 5px;
+            border-radius: 15px;
             border: 1px solid #ccc;
             margin-bottom: 10px;
         }
@@ -295,7 +297,7 @@ session_start();
             background-color: #645FCE;
             color: white;
             border: none;
-            border-radius: 5px;
+            border-radius: 20px;
             cursor: pointer;
             transition: background-color 0.3s;
         }
@@ -322,7 +324,7 @@ session_start();
             <div class="content">
                 <br> <br> <h1>GROUP CHAT THAT'S ALL FUN & GAMES</h1> <br>
                 <p> We are dedicated to providing the best learning experience for our students. </p>
-                <a href="OurCourses.php" class="Our-courses">Our courses</a>
+                <a href="OurCourses.php" class="Our-courses">Our Courses</a>
                 <a href="Welcome.php" class="Back-To-Start">Back To Start</a>
             </div>
         </section>
@@ -376,7 +378,7 @@ session_start();
     </div>
     <br><br>
     <footer>
-        <p>&copy; 2024 Connect Line. All rights reserved</p>
+        <p>&copy; 2024 Connect Line. All rights reserved. Contact Us: support@connectline.com</p>
     </footer>
 
     <?php

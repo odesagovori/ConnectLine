@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 $userId = $_GET['id']; 
 
 include_once 'UserRepository.php';

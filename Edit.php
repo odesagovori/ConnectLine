@@ -93,7 +93,7 @@ if (isset($_POST['editBtn'])) {
         input[type="submit"] {
             background-color: #40356F; /* Save Changes button color */
             color: white;
-            border: none;
+            border: 2.5px solid white; /* White border */
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             font-size: 15px;
             border-radius: 20px; /* Rounder corners */
@@ -110,7 +110,7 @@ if (isset($_POST['editBtn'])) {
         .save-button {
             background-color: #40356F; /* Save Changes button color */
             color: white;
-            border: none;
+            border: 2.5px solid white; /* White border */
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             font-size: 15px;
             border-radius: 20px; /* Rounder corners */
@@ -127,7 +127,7 @@ if (isset($_POST['editBtn'])) {
         .sign-out-button {
             background-color: #004E64; /* Sign Out button color */
             color: white;
-            border: none;
+            border: 2.5px solid white;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             font-size: 15px;
             border-radius: 20px; /* Rounder corners */
@@ -168,7 +168,7 @@ if (isset($_POST['editBtn'])) {
         <input type="password" name="password" placeholder="Enter new password" placeholder="Enter new role">
         <input type="text" name="role" value="<?=$user['role']?>">
 
-        <input type="submit" name="editBtn" value="Save Changes">
+        <input type="submit" name="editBtn" value="Save User Info Changes">
     </form>
     <form action="Dashboard.php" method="get">
         <button class="sign-out-button" onclick="window.location.href='Dashboard.php'">Return to Dashboard</button>

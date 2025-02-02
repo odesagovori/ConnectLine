@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['password'])) {
     <style>
         body {
             font-family: 'Verdana', 'Geneva', 'Tahoma', sans-serif;
-            background: linear-gradient(#645fce,#25a18e,#004e64);
+            background: linear-gradient(#645fce, #25a18e, #004e64);
             color: #fff;
             display: flex;
             flex-direction: column;
@@ -75,6 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['password'])) {
             font-size: 18px;
             transition: color 0.3s;
         }
+        
         .navbar a:hover {
             text-decoration: underline;
             color: #004E64;
@@ -160,12 +161,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['password'])) {
         .bold-text {
             font-weight: bold;
         }
+
         .sign-out-button {
             background-color: #004E64; /* Sign Out button color */
             color: white;
             border: none;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             font-size: 15px;
+            border: 2.5px solid white;
             border-radius: 20px; /* Rounder corners */
             padding: 10px 20px;
             cursor: pointer;
@@ -173,6 +176,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['password'])) {
             margin-bottom: 10px;
         }
 
+        .sign-out-button:hover {
+            background-color: #00a5cf;
+        }
     </style>
 </head>
 <body>
@@ -211,7 +217,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['password'])) {
         </section>
     </main>
     <footer>
-        <p>&copy; 2024 ConnectLine. All rights reserved.</p>
+        <p>&copy; 2024 Connect Line. All rights reserved. Contact Us: support@connectline.com</p>
     </footer>
 </body>
 </html>
