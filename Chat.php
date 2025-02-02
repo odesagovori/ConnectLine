@@ -44,9 +44,10 @@ $messages = $conn->query($sql)->fetchAll(PDO::FETCH_ASSOC);
             margin: 0 15px;
             text-decoration: none;
             font-size: 18px;
-        }
+        } 
         .navbar a:hover {
-            text-decoration: #40356F;
+            text-decoration: underline;
+            color: #004e64;
         }
         .chat-container {
             flex: 1;
