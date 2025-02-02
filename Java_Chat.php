@@ -6,17 +6,24 @@ $db = new Database();
 $conn = $db->getConnection();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $message = $_POST['message'];
-    $userId = $_SESSION['email']; // Assuming user ID is stored in session
-
-    if (!empty($message)) {
-        $sql = "INSERT INTO java_chat (email, message, created_at) VALUES (?, ?, NOW())";
+    if (isset($_POST['delete'])) {
+        $messageId = $_POST['message_id'];
+        $sql = "DELETE FROM java_chat WHERE id = ?";
         $stmt = $conn->prepare($sql);
-        $stmt->execute([$userId, $message]);
+        $stmt->execute([$messageId]);
+    } else {
+        $message = $_POST['message'];
+        $userId = $_SESSION['email']; // Assuming user ID is stored in session
+
+        if (!empty($message)) {
+            $sql = "INSERT INTO java_chat (email, message, created_at) VALUES (?, ?, NOW())";
+            $stmt = $conn->prepare($sql);
+            $stmt->execute([$userId, $message]);
+        }
     }
 }
 
-$sql = "SELECT cm.message, u.username, cm.created_at FROM java_chat cm JOIN users u ON cm.email = u.email ORDER BY cm.created_at ASC";
+$sql = "SELECT cm.id, cm.message, u.username, cm.created_at FROM java_chat cm JOIN users u ON cm.email = u.email ORDER BY cm.created_at ASC";
 $messages = $conn->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 
 // Define a function to generate a unique color for each username
@@ -27,6 +34,7 @@ function getColor($username) {
     return $colors[crc32($username) % count($colors)];
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
