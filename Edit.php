@@ -68,7 +68,7 @@ if (isset($_POST['editBtn'])) {
             background-color: #004e64;
             color: white;
             text-align: center;
-            padding: 20px;
+            padding: 5px;
             margin-top: auto;
             width: 100%;
         }
@@ -91,7 +91,7 @@ if (isset($_POST['editBtn'])) {
         }
 
         input[type="submit"] {
-            background-color: #004E64; /* Sign Out button color */
+            background-color: #40356F; /* Save Changes button color */
             color: white;
             border: none;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -104,8 +104,26 @@ if (isset($_POST['editBtn'])) {
         }
 
         input[type="submit"]:hover {
-            background-color: rgb(70,92,185);
+            background-color: #645FCE; /* Hover color for Save Changes */
         }
+
+        .save-button {
+            background-color: #40356F; /* Save Changes button color */
+            color: white;
+            border: none;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 15px;
+            border-radius: 20px; /* Rounder corners */
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-left: 10px; /* Adds space from the left border */
+            margin-bottom: 10px;
+        }
+
+        .save-button:hover {
+            background-color: #00A5CF; /* Hover color for Save Changes */
+        }
+
         .sign-out-button {
             background-color: #004E64; /* Sign Out button color */
             color: white;
@@ -118,7 +136,13 @@ if (isset($_POST['editBtn'])) {
             margin-left: 10px; /* Adds space from the left border */
             margin-bottom: 10px;
         }
+
+        .sign-out-button:hover {
+            background-color: #00A5CF;
+        }
+
         .center-text {
+            font-size: 40px;
             text-align: center;
             margin-top: 20px;
             color: #ffff;
@@ -130,36 +154,28 @@ if (isset($_POST['editBtn'])) {
     <div class="navbar">
         <img src="Images/LogoImg.png" alt="ConnectLine" style="width: auto; height: 50px; float: left;"> 
         <a href="Home.php">Courses</a>
-        <a href="Chat.php">Chat</a>
-        <a href="My Account.php">My Account</a>
-        <button class="sign-out-button" onclick="window.location.href='Logout.php'">Sign Out</button>
+        <a href="MyAccount.php">My Account</a>
     </div>
-    <div class="center-text">
-        <h1>Edit User</h1>
-    </div>
+    
+    <h1 class="center-text">Edit User Info</h1>
+
     <form action="" method="post">
-        <input type="hidden" name="id" value="<?=$user['id']?>"> <br> 
-        
-        <input type="text" name="name" value="<?=$user['name']?>"> <br> 
-        
-        <input type="text" name="lastname" value="<?=$user['lastname']?>"> <br> 
-        
-        <input type="email" name="email" value="<?=$user['email']?>"> <br>
-        
-        <input type="text" name="username" value="<?=$user['username']?>"> <br> 
-        
-        <input type="password" name="password" placeholder="Enter new password"> <br> 
+        <input type="hidden" name="id" value="<?=$user['id']?>">
+        <input type="text" name="name" value="<?=$user['name']?>" placeholder="Enter new name">
+        <input type="text" name="lastname" value="<?=$user['lastname']?>" placeholder="Enter new lastname">
+        <input type="email" name="email" value="<?=$user['email']?>" placeholder="Enter new email">
+        <input type="text" name="username" value="<?=$user['username']?>" placeholder="Enter new username">
+        <input type="password" name="password" placeholder="Enter new password" placeholder="Enter new role">
+        <input type="text" name="role" value="<?=$user['role']?>">
 
-        <input type="text" name="role" value="<?=$user['role']?>"> <br> 
-
-        <input type="submit" name="editBtn" value="Save Changes"> <br> 
+        <input type="submit" name="editBtn" value="Save Changes">
     </form>
     <form action="Dashboard.php" method="get">
-        <input type="submit" value="Return to Dashboard">
+        <button class="sign-out-button" onclick="window.location.href='Dashboard.php'">Return to Dashboard</button>
     </form>
     <br>
     <div class="footer">
-        <p>&copy; 2024 ConnectLine. All rights reserved.</p>
+    <p>&copy; 2024 Connect Line. All rights reserved. Contact Us: support@connectline.com</p>
     </div>
 </body>
 </html>
